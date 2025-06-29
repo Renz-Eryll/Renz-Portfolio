@@ -49,7 +49,7 @@ const ShowcaseSection = () => {
   }, []);
 
   return (
-    <>
+    <section>
       <div id="projects" ref={sectionRef} className="app-showcase">
         <div className="w-full">
           <div className="showcaselayout">
@@ -87,7 +87,7 @@ const ShowcaseSection = () => {
         </div>
       </div>
       <AnimatedCounter />
-    </>
+    </section>
   );
 };
 

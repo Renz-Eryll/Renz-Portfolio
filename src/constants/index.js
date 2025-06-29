@@ -40,7 +40,7 @@ const logoIconsList = [
     imgPath: "/images/logos/React.svg",
   },
   {
-    imgPath: "/images/logos/Next.js.svg",
+    imgPath: "/images/logos/nextjs.svg",
   },
   {
     imgPath: "/images/logos/Tailwind.svg",
