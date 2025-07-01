@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import AnimatedCounter from "../components/AnimatedCounter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,13 +79,12 @@ const ShowcaseSection = () => {
                 <div className="image-wrapper bg-purple-100 p-5">
                   <img src="/images/ticketing.svg" alt="" />
                 </div>
-                <h2>Movie Discovery & Browsing App</h2>
+                <h2>MedCare: A Healthcare Platform</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <AnimatedCounter />
     </section>
   );
 };

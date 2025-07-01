@@ -6,7 +6,7 @@ const AnimatedCounter = () => {
   const counterRef = useRef(null);
   const countersRef = useRef([]);
   return (
-    <div id="counter" ref={counterRef} className="padding-x-lg xl:mt-20 mt-20">
+    <div ref={counterRef} className="padding-x-lg xl:mt-10 mt-10">
       <div className="mx-auto grid-4-cols">
         {counterItems.map((item, index) => (
           <div
@@ -21,6 +21,7 @@ const AnimatedCounter = () => {
           </div>
         ))}
       </div>
+      <div id="about"></div>
     </div>
   );
 };

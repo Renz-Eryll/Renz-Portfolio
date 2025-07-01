@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { words } from "../constants";
 import Button from "../components/Button";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
+import AnimatedCounter from "../components/AnimatedCounter";
 
 const Hero = () => {
   useGSAP(() => {
@@ -15,7 +16,7 @@ const Hero = () => {
   });
 
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="background" />
       </div>
@@ -67,6 +68,7 @@ const Hero = () => {
           </div>
         </figure>
       </div>
+      <AnimatedCounter />
     </section>
   );
 };

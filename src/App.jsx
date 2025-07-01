@@ -1,16 +1,26 @@
-import React from "react";
+import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import ShowcaseSection from "./sections/ShowcaseSection";
-import Navbar from "./components/Navbar";
-import LogoShowcase from "./components/LogoShowcase";
+import LogoShowcase from "./sections/LogoShowcase";
+import About from "./sections/About";
+import FeatureCards from "./sections/FeatureCards";
+import Skills from "./sections/Skills";
+import Contact from "./sections/Contact";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Hero />
-      <LogoShowcase />
+      <About />
+      <FeatureCards />
       <ShowcaseSection />
+      <LogoShowcase />
+      <Skills />
+      <FeatureCards />
+      <Contact />
+      <FeatureCards />
+      <FeatureCards />
     </>
   );
 };

@@ -261,7 +261,7 @@ section {
   }
 
   .marquee-item {
-    @apply md:w-10 w-5;
+    @apply md:w-10 w-10;
   }
 
   .timeline-wrapper {

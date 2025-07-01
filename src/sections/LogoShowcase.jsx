@@ -2,7 +2,7 @@ import { logoIconsList } from "../constants";
 
 const LogoIcon = ({ icon }) => {
   return (
-    <div className="flex-none flex-center marquee-item">
+    <div id="skills" className="flex-none flex-center marquee-item">
       <img src={icon.imgPath} alt={icon.name} />
     </div>
   );
@@ -13,8 +13,8 @@ const LogoShowcase = () => (
     <div className="gradient-edge" />
     <div className="gradient-edge" />
 
-    <div className="marquee h-30">
-      <div className="marquee-box md:gap-20 gap-5 ">
+    <div className="marquee h-50">
+      <div className="marquee-box md:gap-20 gap-10 ">
         {logoIconsList.map((icon, index) => (
           <LogoIcon key={index} icon={icon} />
         ))}

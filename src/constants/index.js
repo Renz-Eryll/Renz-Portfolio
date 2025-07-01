@@ -1,19 +1,20 @@
 const navLinks = [
   {
+    name: "Home",
+    link: "#home",
+  },
+  {
+    name: "About",
+    link: "#about",
+  },
+  {
     name: "Projects",
     link: "#projects",
   },
-  {
-    name: "Experience",
-    link: "#experience",
-  },
+
   {
     name: "Skills",
     link: "#skills",
-  },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
   },
 ];
 
@@ -76,19 +77,19 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
-    title: "Quality Focus",
-    desc: "Delivering high-quality results while maintaining attention to every detail.",
+    imgPath: "/images/clock-solid.svg",
+    title: "Time Management",
+    desc: "Effectively prioritizing tasks and meeting deadlines while maintaining high standards of quality.",
   },
   {
-    imgPath: "/images/chat.png",
-    title: "Reliable Communication",
-    desc: "Keeping you updated at every step to ensure transparency and clarity.",
+    imgPath: "/images/users-solid.svg",
+    title: "Teamwork",
+    desc: "Collaborates effectively to achieve team objectives with clear communication.",
   },
   {
-    imgPath: "/images/time.png",
-    title: "On-Time Delivery",
-    desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
+    imgPath: "/images/book-solid.svg",
+    title: "Continuous Learning",
+    desc: "Committed to expanding skills and staying current with evolving technologies.",
   },
 ];
 
