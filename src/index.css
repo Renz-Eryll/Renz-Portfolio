@@ -22,6 +22,7 @@ section {
 @theme {
   --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
+  --color-purple-10: #B576FF;
   --color-purple-50: #9A4DFF;
   --color-purple-100: #5A189A;
   --color-black-50: #1c1c21;
@@ -273,7 +274,7 @@ section {
   }
 
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+    @apply md:size-17 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
   }
 
   .exp-card-wrapper {
@@ -322,6 +323,7 @@ section {
       }
     }
   }
+
 
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
