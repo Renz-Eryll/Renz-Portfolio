@@ -2,8 +2,7 @@ import TitleHeader from "../components/TitleHeader";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-import { expCards } from "../constants";
+import { aboutMe } from "../constants";
 import GlowCard from "../components/GlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,14 +89,20 @@ const About = () => {
   }, []);
   return (
     <>
-      <section className="flex-center md:mt-40 mt-20 section-padding xl:px-0">
+      <section
+        id="about"
+        className="flex-center py-20 md:mt-20 mt-20 section-padding xl:px-0"
+      >
         <div className="w-full h-full md:px-20 px-5">
-          <TitleHeader title="Get To Know Me" sub="👨‍💻 About Me" />
+          <TitleHeader
+            title="Team Development Timeline"
+            sub="🚀 Web Dev Experience"
+          />
 
           <div className="mt-32 relative">
             <div className="relative z-50 xl:space-y-32 space-y-10">
-              {expCards.map((card) => (
-                <div key={card.title} className=" exp-card-wrapper">
+              {aboutMe.map((card) => (
+                <div key={card.title} className="exp-card-wrapper">
                   <div className="xl:w-2/6">
                     <GlowCard card={card}>
                       <div>

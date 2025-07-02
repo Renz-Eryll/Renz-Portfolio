@@ -5,7 +5,7 @@ import FeatureCards from "./FeatureCards";
 const Skills = () => {
   return (
     <>
-      <section className="w-full flex-center md:mt-10 mt-20 section-padding xl:px-0">
+      <section className="w-full flex-center md:mt-25 mt-20 section-padding xl:px-0">
         <div className="w-full h-full md:px-20 px-5">
           <TitleHeader
             title="Skills, Technologies & Tools I Use"

@@ -52,10 +52,10 @@ const ShowcaseSection = () => {
     <section>
       <div id="projects" ref={sectionRef} className="app-showcase">
         <div className="w-full">
-          <div className="mb-20">
+          <div className="mb-10">
             <TitleHeader
-              title="My Projects and Web Apps"
-              sub="🚀 Personal Projects"
+              title="Personal Works and Web Apps"
+              sub="🚀 My Projects"
             />
           </div>
           <div className="showcaselayout">
@@ -79,14 +79,14 @@ const ShowcaseSection = () => {
                 <div className="image-wrapper bg-purple-100 p-5">
                   <img src="/images/ticketing.svg" alt="ticketing" />
                 </div>
-                <h2>Ticketing & Support Management System</h2>
+                <h2>MedCare: A Healthcare Platform</h2>
               </div>
 
               <div className="project" ref={project3Ref}>
                 <div className="image-wrapper bg-purple-100 p-5">
                   <img src="/images/ticketing.svg" alt="" />
                 </div>
-                <h2>MedCare: A Healthcare Platform</h2>
+                <h2>A Movie Browsing App</h2>
               </div>
             </div>
           </div>

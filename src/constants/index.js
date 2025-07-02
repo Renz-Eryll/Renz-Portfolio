@@ -93,18 +93,18 @@ const abilities = [
   },
 ];
 
-const expCards = [
+const aboutMe = [
   {
-    desc: "A full-stack ticketing platform for submitting, managing, and resolving customer support tickets through an admin- and agent-managed system.",
+    desc: "A project that developed as part of On-the-Job Training (OJT) at Qtech Business Solution Inc. It’s a full-stack ticketing platform for customer support processes. The system enables customers to submit support tickets via a web interface, which are then managed by administrators and assigned to agents for resolution.",
     link: "https://www.facebook.com/renzeryll.ramelo",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logos/React.svg",
-    title: "Frontend Developer, UI/UX Designer",
+    title: "Frontend Developer, UI/UX Designer & Quality Assurance",
     date: "March - June 2025",
     responsibilities: [
-      "Designed a user-friendly interfaces for submitting and managing support tickets.",
-      "Integrated  ticket updates and status tracking with React.js and Laravel.",
-      "Developed responsive UI components for customers, agents, and admins.",
+      "Performed QA testing to ensure functionality, fix issues, and maintain compatibility.",
+      "Designed and developed user-friendly, responsive interfaces for the customer, agent, and admin portals",
+      "Collaborated with the back-end team to integrate ticket management and status updates using React.js and Laravel",
     ],
   },
   {
@@ -113,9 +113,7 @@ const expCards = [
     logoPath: "/images/logos/HTML5.svg",
     title: "Frontend Developer, Arduino Programmer",
     date: "June 2020 - December 2023",
-    responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-    ],
+    responsibilities: [""],
   },
 ];
 
@@ -158,7 +156,7 @@ export {
   abilities,
   logoIconsList,
   counterItems,
-  expCards,
+  aboutMe,
   expLogos,
   socialImgs,
   navLinks,
