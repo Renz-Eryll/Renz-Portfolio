@@ -112,7 +112,7 @@ const aboutMe = [
   {
     desc: "This project serves as our capstone project / thesis, featuring an IoT-enabled web-based system designed to enhance stingless bee honey production",
     link: "https://github.com/CJcode6754/BeeMo.git",
-    imgPath: "/images/ticketing.svg",
+    imgPath: "/images/beemo.svg",
     logoPath: "/images/logos/HTML5.svg",
     title: "Frontend Developer, Arduino Programmer",
     date: "May 2024 - November 2024",

@@ -135,7 +135,7 @@ const ShowcaseSection = () => {
 
               <div className="project" ref={project3Ref}>
                 <div className="image-wrapper bg-white p-5">
-                  <img src="/images/ticketing.svg" alt="" />
+                  <img src="/images/movie.svg" alt="MovieApp" />
                 </div>
                 <h2>Movie Browsing App</h2>
                 <div className="flex justify-start mt-3 gap-5">
