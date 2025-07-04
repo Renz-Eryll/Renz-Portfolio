@@ -105,8 +105,13 @@ const About = () => {
                 <div key={card.title} className="exp-card-wrapper">
                   <div className="xl:w-2/6">
                     <GlowCard card={card}>
-                      <div>
-                        <img alt="project-img" />
+                      <div className="flex justify-center">
+                        <img
+                          src={card.imgPath}
+                          alt="project-img"
+                          width={320}
+                          height={300}
+                        />
                       </div>
                     </GlowCard>
                   </div>
@@ -132,10 +137,11 @@ const About = () => {
                           <p className="my-5 text-white-50">
                             🗓️&nbsp;{card.date}
                           </p>
+                          <p className="my-5 text-white-50">{card.shortDesc}</p>
                           <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
                             {card.responsibilities.map(
                               (responsibility, index) => (
-                                <li key={index} className="text-lg">
+                                <li key={index} className="text-md">
                                   {responsibility}
                                 </li>
                               )

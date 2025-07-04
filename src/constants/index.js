@@ -95,12 +95,14 @@ const abilities = [
 
 const aboutMe = [
   {
-    desc: "A project that developed as part of On-the-Job Training (OJT) at Qtech Business Solution Inc. It’s a full-stack ticketing platform for customer support processes. The system enables customers to submit support tickets via a web interface, which are then managed by administrators and assigned to agents for resolution.",
-    link: "https://www.facebook.com/renzeryll.ramelo",
-    imgPath: "/images/exp1.png",
+    desc: "A full-stack ticketing system developed during On-the-Job Training at Qtech Business Solution Inc.",
+    link: "https://github.com/Renz-Eryll/Ticketing-System.git",
+    imgPath: "/images/ticketing.svg",
     logoPath: "/images/logos/React.svg",
     title: "Frontend Developer, UI/UX Designer & Quality Assurance",
     date: "March - June 2025",
+    shortDesc:
+      "A full-stack ticketing platform for customer support processes. The system enables customers to submit support tickets via a web interface, which are then managed by administrators and assigned to agents for resolution.",
     responsibilities: [
       "Performed QA testing to ensure functionality, fix issues, and maintain compatibility.",
       "Designed and developed user-friendly, responsive interfaces for the customer, agent, and admin portals",
@@ -108,12 +110,18 @@ const aboutMe = [
     ],
   },
   {
-    desc: "an IoT-enabled web-based system designed to enhance stingless bee honey production through continuous monitoring, parameter regulation, and descriptive analytics.",
-    imgPath: "/images/exp2.png",
+    desc: "This project serves as our capstone project / thesis, featuring an IoT-enabled web-based system designed to enhance stingless bee honey production",
+    link: "https://github.com/CJcode6754/BeeMo.git",
+    imgPath: "/images/ticketing.svg",
     logoPath: "/images/logos/HTML5.svg",
     title: "Frontend Developer, Arduino Programmer",
-    date: "June 2020 - December 2023",
-    responsibilities: [""],
+    date: "May 2024 - November 2024",
+    shortDesc:
+      "An IoT-based system for real-time monitoring and automated regulation of stingless bee hives, featuring web and SMS notifications, harvest tracking, historical data analytics, multi-hive management, and offline parameter control during network downtime.",
+    responsibilities: [
+      "Developed the front-end interfaces for real-time hive monitoring, harvest tracking, and notifications using HTML, CSS and Bootstrap",
+      "Programmed and integrated Arduino-based sensors and IoT modules for automated temperature, humidity, and hive weight monitoring, with data transmission to the web system.",
+    ],
   },
 ];
 

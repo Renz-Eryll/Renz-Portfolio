@@ -30,14 +30,27 @@ const GlowCard = ({ card, index, children }) => {
     <div
       ref={(el) => (cardRefs.current[index] = el)}
       onMouseMove={handleMouseMove(index)}
-      className="card card-border timeline-card rounded-xl p-7 mb-0 break-inside-avoid-column"
+      className="card card-border timeline-card rounded-xl p-8.5 mb-0 break-inside-avoid-column"
     >
       {children}
       <div className="mt-5 space-y-4">
-        <p className="text-white-50 text-lg">{card.desc}</p>
-        <a href="" className="">
-          Live Link
-        </a>
+        <p className="text-white-50 text-md text-justify">{card.desc}</p>
+        <div className="flex justify-end gap-5">
+          <div className="relative z-50">
+            <div className="flex justify-end gap-5">
+              <div className="relative z-50">
+                <a
+                  href={card.link}
+                  className="inline-block underline text-purple-50 font-semibold transition-transform duration-200  hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TitleHeader from "../components/TitleHeader";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +64,11 @@ const ShowcaseSection = () => {
             {/* LEFT */}
             <div className="first-project-wrapper" ref={project1Ref}>
               <div className="image-wrapper">
-                <img src="/images/syncit.svg" alt="Sync It" />
+                <img
+                  src="/images/syncit.svg"
+                  alt="Sync It"
+                  className="transition-transform duration-200 hover:scale-101"
+                />
               </div>
               <div className="text-content">
                 <h2>Sync It: A Storage and File Sharing Platform </h2>
@@ -70,23 +76,89 @@ const ShowcaseSection = () => {
                   A storage and file sharing app built with Next.js 15 and
                   Appwrite for seamless file management.
                 </p>
+                <div className="flex justify-start gap-5">
+                  <a
+                    href="https://github.com/Renz-Eryll/SyncIt.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-purple-100 text-white rounded-md text-md font-medium transition-transform duration-200 hover:scale-105"
+                  >
+                    <FaGithub size={16} />
+                    View Code
+                  </a>
+
+                  <a
+                    href="https://sync-it-project.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-2 border border-white-50 text-white-50 rounded-md text-md font-medium transition-transform duration-200 hover:scale-105"
+                  >
+                    <FiExternalLink size={16} />
+                    Live
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* RIGHT */}
             <div className="project-list-wrapper overflow-hidden">
               <div className="project" ref={project2Ref}>
-                <div className="image-wrapper bg-purple-100 p-5">
-                  <img src="/images/ticketing.svg" alt="ticketing" />
+                <div className="image-wrapper bg-white p-5">
+                  <img src="/" alt="MedCare" width={20} height={20} />
                 </div>
-                <h2>MedCare: A Healthcare Platform</h2>
+                <h2>MedCare: A Healthcare Management System</h2>
+
+                <div className="flex justify-start mt-3 gap-5">
+                  <a
+                    href="https://github.com/Renz-Eryll/MedCare.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-2.5 py-2 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                  >
+                    <FaGithub size={14} />
+                    View Code
+                  </a>
+
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    aria-disabled="true"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-2.5 py-2 border border-white-50 text-gray-400 cursor-not-allowed opacity-50 rounded-md text-sm font-medium pointer-events-none"
+                  >
+                    <FiExternalLink size={14} />
+                    Live
+                  </a>
+                </div>
               </div>
 
               <div className="project" ref={project3Ref}>
-                <div className="image-wrapper bg-purple-100 p-5">
+                <div className="image-wrapper bg-white p-5">
                   <img src="/images/ticketing.svg" alt="" />
                 </div>
-                <h2>A Movie Browsing App</h2>
+                <h2>Movie Browsing App</h2>
+                <div className="flex justify-start mt-3 gap-5">
+                  <a
+                    href="https://github.com/Renz-Eryll/MovieBrowsingApp.git"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-2.5 py-2 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                  >
+                    <FaGithub size={14} />
+                    View Code
+                  </a>
+
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    aria-disabled="true"
+                    className="inline-flex items-center gap-2 px-2.5 py-2 border border-white-50 text-gray-400 cursor-not-allowed opacity-50 rounded-md text-sm font-medium pointer-events-none"
+                  >
+                    <FiExternalLink size={14} />
+                    Live
+                  </a>
+                </div>
               </div>
             </div>
           </div>
