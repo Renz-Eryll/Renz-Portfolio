@@ -21,6 +21,7 @@ const AnimatedCounter = () => {
           </div>
         ))}
       </div>
+      <div id="about"></div>
     </div>
   );
 };

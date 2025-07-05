@@ -93,7 +93,7 @@ const abilities = [
   },
 ];
 
-const aboutMe = [
+const experience = [
   {
     desc: "A full-stack ticketing system developed during On-the-Job Training at Qtech Business Solution Inc.",
     link: "https://github.com/Renz-Eryll/Ticketing-System.git",
@@ -164,7 +164,7 @@ export {
   abilities,
   logoIconsList,
   counterItems,
-  aboutMe,
+  experience,
   expLogos,
   socialImgs,
   navLinks,

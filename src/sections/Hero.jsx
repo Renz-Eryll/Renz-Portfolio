@@ -57,7 +57,7 @@ const Hero = () => {
             <Button
               text="Resume"
               className="md:w-60 md:h-16 w-40 h-12"
-              href="/files/Renz_Resume.pdf"
+              href="/files/RenzEryllRameloResume.pdf"
               download
             />
           </div>

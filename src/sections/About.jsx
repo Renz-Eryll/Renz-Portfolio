@@ -1,162 +1,96 @@
+import { useRef } from "react";
 import TitleHeader from "../components/TitleHeader";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { aboutMe } from "../constants";
-import GlowCard from "../components/GlowCard";
+import Experience from "./Experience";
 
-gsap.registerPlugin(ScrollTrigger);
+const About = ({ index }) => {
+  // refs for all the cards
+  const cardRefs = useRef([]);
 
-const About = () => {
-  useGSAP(() => {
-    // Loop through each timeline card and animate them in
-    // as the user scrolls to each card
-    gsap.utils.toArray(".timeline-card").forEach((card) => {
-      // Animate the card coming in from the left
-      // and fade in
-      gsap.from(card, {
-        // Move the card in from the left
-        xPercent: -100,
-        // Make the card invisible at the start
-        opacity: 0,
-        // Set the origin of the animation to the left side of the card
-        transformOrigin: "left left",
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the card is 80% of the way down the screen
-        scrollTrigger: {
-          // The card is the trigger element
-          trigger: card,
-          // Trigger the animation when the card is 80% down the screen
-          start: "top 80%",
-        },
-      });
-    });
+  // when mouse moves over a card, rotate the glow effect
+  const handleMouseMove = (index) => (e) => {
+    // get the current card
+    const card = cardRefs.current[index];
+    if (!card) return;
 
-    // Animate the timeline height as the user scrolls
-    // from the top of the timeline to 70% down the screen
-    // The timeline height should scale down from 1 to 0
-    // as the user scrolls up the screen
-    gsap.to(".timeline", {
-      // Set the origin of the animation to the bottom of the timeline
-      transformOrigin: "bottom bottom",
-      // Animate the timeline height over 1 second
-      ease: "power1.inOut",
-      // Trigger the animation when the timeline is at the top of the screen
-      // and end it when the timeline is at 70% down the screen
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        end: "70% center",
-        // Update the animation as the user scrolls
-        onUpdate: (self) => {
-          // Scale the timeline height as the user scrolls
-          // from 1 to 0 as the user scrolls up the screen
-          gsap.to(".timeline", {
-            scaleY: 1 - self.progress,
-          });
-        },
-      },
-    });
+    // get the mouse position relative to the card
+    const rect = card.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left - rect.width / 2;
+    const mouseY = e.clientY - rect.top - rect.height / 2;
 
-    // Loop through each expText element and animate them in
-    // as the user scrolls to each text element
-    gsap.utils.toArray(".expText").forEach((text) => {
-      // Animate the text opacity from 0 to 1
-      // and move it from the left to its final position
-      // over 1 second with a power2 ease-in-out curve
-      gsap.from(text, {
-        // Set the opacity of the text to 0
-        opacity: 0,
-        // Move the text from the left to its final position
-        // (xPercent: 0 means the text is at its final position)
-        xPercent: 0,
-        // Animate over 1 second
-        duration: 1,
-        // Use a power2 ease-in-out curve
-        ease: "power2.inOut",
-        // Trigger the animation when the text is 60% down the screen
-        scrollTrigger: {
-          // The text is the trigger element
-          trigger: text,
-          // Trigger the animation when the text is 60% down the screen
-          start: "top 60%",
-        },
-      });
-    }, "<"); // position parameter - insert at the start of the animation
-  }, []);
+    // calculate the angle from the center of the card to the mouse
+    let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
+
+    // adjust the angle so that it's between 0 and 360
+    angle = (angle + 360) % 360;
+
+    // set the angle as a CSS variable
+    card.style.setProperty("--start", angle + 60);
+  };
+
   return (
     <>
-      <section
-        id="about"
-        className="flex-center py-20 md:mt-20 mt-20 section-padding xl:px-0"
-      >
-        <div className="w-full h-full md:px-20 px-5">
-          <TitleHeader
-            title="Team Development Timeline"
-            sub="🚀 Web Dev Experience"
-          />
+      <section className="flex-center py-10 md:mt-20 mt-20 section-padding xl:px-0">
+        <div className="w-full h-full md:px-20 px-5 ">
+          <TitleHeader title="Know About Me" sub="👨‍💻 About Me" />
+          <div
+            ref={(el) => (cardRefs.current[index] = el)}
+            onMouseMove={handleMouseMove(index)}
+            className="mt-10 card card-border timeline-card rounded-xl p-10 lg:p-15 mb-0 break-inside-avoid-column"
+          >
+            <div>
+              <div className="flex justify-center items-center gap-3">
+                <h1 className="text-4xl lg:text-5xl font-semibold">
+                  I'm <span className="text-purple-50">Renz</span> Eryll Ramelo
+                </h1>
+                <img
+                  src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif"
+                  width="35px"
+                  alt="wave"
+                />
+              </div>
 
-          <div className="mt-32 relative">
-            <div className="relative z-50 xl:space-y-32 space-y-10">
-              {aboutMe.map((card) => (
-                <div key={card.title} className="exp-card-wrapper">
-                  <div className="xl:w-2/6">
-                    <GlowCard card={card}>
-                      <div className="flex justify-center">
-                        <img
-                          src={card.imgPath}
-                          alt="project-img"
-                          width={320}
-                          height={300}
-                        />
-                      </div>
-                    </GlowCard>
-                  </div>
-                  <div className="xl:w-4/6">
-                    <div className="flex items-start">
-                      <div className="timeline-wrapper">
-                        <div className="timeline" />
-                        <div className="gradient-line w-1 h-full" />
-                      </div>
-                      <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                        <div className="timeline-logo">
-                          <img
-                            src={card.logoPath}
-                            alt="logo"
-                            width={30}
-                            height={30}
-                          />
-                        </div>
-                        <div>
-                          <h1 className="font-semibold text-3xl">
-                            {card.title}
-                          </h1>
-                          <p className="my-5 text-white-50">
-                            🗓️&nbsp;{card.date}
-                          </p>
-                          <p className="my-5 text-white-50">{card.shortDesc}</p>
-                          <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
-                            {card.responsibilities.map(
-                              (responsibility, index) => (
-                                <li key={index} className="text-md">
-                                  {responsibility}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+              <div className="text-xl text-white/80 text-center space-y-2 mt-5">
+                <p>A Web Developer from the Philippines 🇵🇭</p>
+                <p>🎯 Open for work and freelance opportunities!</p>
+              </div>
+
+              <hr className="mt-6 border-t border-white/20" />
+            </div>
+
+            <div className="mt-10">
+              <div className="grid grid-cols-12 mt-5 ">
+                <div className="col-span-12 flex justify-center">
+                  <div className="max-w-4xl">
+                    <ul className="text-lg text-white-50 space-y-3">
+                      <li>
+                        🎓 I'm an aspiring web developer passionate about
+                        building responsive and efficient web applications.
+                      </li>
+                      <li>
+                        🌱 Currently exploring more about backend technologies
+                        and full-stack system.
+                      </li>
+                      <li>
+                        🐝 Highlight: We developed an IoT-enabled stingless bee
+                        hive monitoring system for our capstone project.
+                      </li>
+                      <li>
+                        🤝 Strong believer in teamwork, clean code, and
+                        continuous learning.
+                      </li>
+                      <li>
+                        🎮 When I'm not coding, I love gaming and listening to
+                        music.
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <Experience />
     </>
   );
 };
