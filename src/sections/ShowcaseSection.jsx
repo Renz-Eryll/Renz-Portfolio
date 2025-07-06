@@ -164,6 +164,7 @@ const ShowcaseSection = () => {
           </div>
         </div>
       </div>
+      <div id="skills"></div>
     </section>
   );
 };

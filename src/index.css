@@ -262,7 +262,7 @@ section {
   }
 
   .marquee-item {
-    @apply md:w-10 w-10;
+    @apply md:w-13 w-13;
   }
 
   .timeline-wrapper {

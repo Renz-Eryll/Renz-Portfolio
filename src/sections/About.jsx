@@ -35,11 +35,11 @@ const About = ({ index }) => {
           <div
             ref={(el) => (cardRefs.current[index] = el)}
             onMouseMove={handleMouseMove(index)}
-            className="mt-10 card card-border timeline-card rounded-xl p-10 lg:p-15 mb-0 break-inside-avoid-column"
+            className="mt-10 card timeline-card rounded-xl p-10 lg:p-20 mb-0 break-inside-avoid-column"
           >
             <div>
               <div className="flex justify-center items-center gap-3">
-                <h1 className="text-4xl lg:text-5xl font-semibold">
+                <h1 className="text-3xl lg:text-4xl font-bold">
                   I'm <span className="text-purple-50">Renz</span> Eryll Ramelo
                 </h1>
                 <img
@@ -49,19 +49,18 @@ const About = ({ index }) => {
                 />
               </div>
 
-              <div className="text-xl text-white/80 text-center space-y-2 mt-5">
+              <div className="text-xl text-white-50 text-center space-y-3 mt-5">
                 <p>A Web Developer from the Philippines 🇵🇭</p>
                 <p>🎯 Open for work and freelance opportunities!</p>
               </div>
 
               <hr className="mt-6 border-t border-white/20" />
             </div>
-
             <div className="mt-10">
-              <div className="grid grid-cols-12 mt-5 ">
+              <div className="grid grid-cols-12 mt-5">
                 <div className="col-span-12 flex justify-center">
-                  <div className="max-w-4xl">
-                    <ul className="text-lg text-white-50 space-y-3">
+                  <div className="max-w-8xl w-full">
+                    <ul className="text-lg text-white grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-15">
                       <li>
                         🎓 I'm an aspiring web developer passionate about
                         building responsive and efficient web applications.
