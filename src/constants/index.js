@@ -46,6 +46,9 @@ const logoIconsList = [
   {
     imgPath: "/images/logos/Tailwind.svg",
   },
+  {
+    imgPath: "/images/logos/Postman.svg",
+  },
 
   {
     imgPath: "/images/logos/Node.js.svg",
@@ -57,14 +60,11 @@ const logoIconsList = [
     imgPath: "/images/logos/HTML5.svg",
   },
   {
-    imgPath: "/images/logos/CSS3.svg",
-  },
-  {
     imgPath: "/images/logos/JavaScript.svg",
   },
 
   {
-    imgPath: "/images/logos/MySQL.svg",
+    imgPath: "/images/logos/MongoDB.svg",
   },
   {
     imgPath: "/images/logos/Bootstrap.svg",
