@@ -3,8 +3,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TitleHeader from "../components/TitleHeader";
-import { FaGithub } from "react-icons/fa";
+import { FaFigma, FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { FiFigma } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,16 +77,18 @@ const ShowcaseSection = () => {
                   A storage and file sharing app built with Next.js 15 and
                   Appwrite for seamless file management.
                 </p>
-                <div className="flex justify-start gap-5">
-                  <a
-                    href="https://github.com/Renz-Eryll/SyncIt.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-2 bg-purple-100 text-white rounded-md text-md font-medium transition-transform duration-200 hover:scale-105"
-                  >
-                    <FaGithub size={16} />
-                    View Code
-                  </a>
+                <div className="flex justify-start gap-3">
+                  <div className="relative group">
+                    <a
+                      href="https://github.com/Renz-Eryll/SyncIt.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-3 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                    >
+                      <FaGithub size={16} />
+                      Code
+                    </a>
+                  </div>
 
                   <a
                     href="https://sync-it-project.vercel.app"
@@ -104,30 +107,35 @@ const ShowcaseSection = () => {
             <div className="project-list-wrapper overflow-hidden">
               <div className="project" ref={project2Ref}>
                 <div className="image-wrapper bg-white-50 p-5">
-                  <img src="/" alt="MedCare" width={20} height={20} />
+                  <img
+                    src="/images/liteNotee.svg"
+                    alt="LiteNote"
+                    width={20}
+                    height={20}
+                  />
                 </div>
-                <h2>MedCare: A Healthcare Management System</h2>
+                <h2>LiteNote: Full-Stack Note-Taking App</h2>
 
-                <div className="flex justify-start mt-3 gap-5">
+                <div className="flex justify-start mt-3 gap-3">
+                  <div className="relative group">
+                    <a
+                      href="https://github.com/Renz-Eryll/LiteNote.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-3 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                    >
+                      <FaGithub size={16} />
+                      Code
+                    </a>
+                  </div>
+
                   <a
-                    href="https://github.com/Renz-Eryll/MedCare.git"
+                    href="https://litenote-kapw.onrender.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-2.5 py-2 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                    className="inline-flex items-center gap-2 px-3 py-2 border border-white-50 text-white-50 rounded-md text-md font-medium transition-transform duration-200 hover:scale-105"
                   >
-                    <FaGithub size={14} />
-                    View Code
-                  </a>
-
-                  <a
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    aria-disabled="true"
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-2.5 py-2 border border-white-50 text-gray-400 cursor-not-allowed opacity-50 rounded-md text-sm font-medium pointer-events-none"
-                  >
-                    <FiExternalLink size={14} />
+                    <FiExternalLink size={16} />
                     Live
                   </a>
                 </div>
@@ -138,16 +146,18 @@ const ShowcaseSection = () => {
                   <img src="/images/movie.svg" alt="MovieApp" />
                 </div>
                 <h2>Movie Browsing App</h2>
-                <div className="flex justify-start mt-3 gap-5">
-                  <a
-                    href="https://github.com/Renz-Eryll/MovieBrowsingApp.git"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-2.5 py-2 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
-                  >
-                    <FaGithub size={14} />
-                    View Code
-                  </a>
+                <div className="flex justify-start mt-3 gap-3">
+                  <div className="relative group">
+                    <a
+                      href="https://github.com/Renz-Eryll/MovieBrowsingApp.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-3 bg-purple-100 text-white rounded-md text-sm font-medium transition-transform duration-200 hover:scale-102"
+                    >
+                      <FaGithub size={16} />
+                      Code
+                    </a>
+                  </div>
 
                   <a
                     href="#"
