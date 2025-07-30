@@ -160,7 +160,7 @@ const ShowcaseSection = () => {
                       View Code
                     </a>
                     <a
-                      href="resumind-app.vercel.app"
+                      href="https://resumind-app.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-1 border-white-50 text-white-50 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/25 transform hover:-translate-y-0.5"
