@@ -8,7 +8,7 @@ const FeatureCards = () => {
         {abilities.map(({ imgPath, title, desc }) => (
           <div
             key={title}
-            className="card-border rounded-xl p-8 flex flex-col gap-4"
+            className="card-border rounded-xl p-8 flex flex-col gap-4 hover:border-white transition-all duration-300 cursor-pointer group"
           >
             <div className="size-14 flex items-center justify-center rounded-full">
               <img src={imgPath} alt={title} width={30} height={30} />
