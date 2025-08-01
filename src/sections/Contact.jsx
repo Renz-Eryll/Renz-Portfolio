@@ -66,7 +66,7 @@ const Contact = () => {
               Contact Information
             </div>
 
-            <div className="space-y-4 text-lg text-white-50">
+            <div className="space-y-4 text-base text-white-50">
               <p>📍 Address: Sariaya, Quezon Philippines </p>
               <p>📞 Contact Number: +63 930 703 3769</p>
               <p>

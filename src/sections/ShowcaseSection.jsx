@@ -86,7 +86,7 @@ const ShowcaseSection = () => {
             {/* Project Card 1 */}
             <div
               ref={project1Ref}
-              className="bg-black border border-white-50 rounded-2xl p-6 transition-all duration-300 hover:border-white cursor-pointer"
+              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
@@ -100,7 +100,7 @@ const ShowcaseSection = () => {
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
                     Sync It: A Storage and File Sharing Platform
                   </h2>
-                  <p className="text-white-50 md:text-lg mb-4">
+                  <p className="text-white-50 md:text-base mb-4">
                     A storage and file sharing app built with Next.js 15 and
                     Appwrite for seamless file management.
                   </p>
@@ -131,7 +131,7 @@ const ShowcaseSection = () => {
             {/* Project Card 2 */}
             <div
               ref={project2Ref}
-              className="bg-black border border-white-50  rounded-2xl p-6 transition-all duration-300 hover:border-white cursor-pointer"
+              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
@@ -145,7 +145,7 @@ const ShowcaseSection = () => {
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
                     Resumind: AI-Powered Resume Analyzer App
                   </h2>
-                  <p className="text-white-50 md:text-lg mb-4">
+                  <p className="text-white-50 md:text-base mb-4">
                     A resume analyzer tool that allows users to create job
                     listings, upload resumes, and match them to requirements.
                   </p>
@@ -175,7 +175,7 @@ const ShowcaseSection = () => {
             {/* Project Card 3 */}
             <div
               ref={project3Ref}
-              className="bg-black border border-white-50  rounded-2xl p-6 transition-all duration-300 hover:border-white cursor-pointer"
+              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
@@ -189,7 +189,7 @@ const ShowcaseSection = () => {
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
                     LiteNote: Full-Stack Note-Taking App
                   </h2>
-                  <p className="text-white-50 md:text-lg mb-4">
+                  <p className="text-white-50 md:text-base mb-4">
                     A comprehensive note-taking application with full-stack
                     functionality for organizing and managing your thoughts.
                   </p>
@@ -220,7 +220,7 @@ const ShowcaseSection = () => {
             {/* Project Card 4 */}
             <div
               ref={project4Ref}
-              className="bg-black border border-white-50  rounded-2xl p-6 transition-all duration-300 hover:border-white cursor-pointer"
+              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
             >
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
@@ -234,7 +234,7 @@ const ShowcaseSection = () => {
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
                     Movie Browsing App
                   </h2>
-                  <p className="text-white-50 md:text-lg mb-4">
+                  <p className="text-white-50 md:text-base mb-4">
                     A movie discovery application for browsing and exploring
                     films with an intuitive user interface.
                   </p>

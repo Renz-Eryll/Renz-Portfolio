@@ -137,11 +137,13 @@ const Experience = () => {
                           <p className="my-5 font-medium text-purple-50">
                             🗓️&nbsp;{card.date}
                           </p>
-                          <p className="my-5 text-white-50">{card.shortDesc}</p>
-                          <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
+                          <p className="my-5 text-white-50 text-base">
+                            {card.shortDesc}
+                          </p>
+                          <ul className="list-disc  ms-5 mt-5 flex flex-col gap-5 text-white-50">
                             {card.responsibilities.map(
                               (responsibility, index) => (
-                                <li key={index} className="text-md">
+                                <li key={index} className="text-base">
                                   {responsibility}
                                 </li>
                               )

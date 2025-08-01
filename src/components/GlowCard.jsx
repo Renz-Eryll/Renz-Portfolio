@@ -34,7 +34,7 @@ const GlowCard = ({ card, index, children }) => {
     >
       {children}
       <div className="mt-5 space-y-4">
-        <p className="text-white-50 text-md text-justify">{card.desc}</p>
+        <p className="text-white-50 text-base text-justify">{card.desc}</p>
         <div className="flex justify-end gap-5">
           <div className="relative z-50">
             <div className="flex justify-end gap-5">
