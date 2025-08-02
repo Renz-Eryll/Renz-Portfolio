@@ -180,22 +180,23 @@ const ShowcaseSection = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
                   <img
-                    src="/images/liteNotee.svg"
-                    alt="LiteNote"
+                    src="/images/courseboard.svg"
+                    alt="courseboard"
                     className="w-full h-48 md:h-64 object-contain rounded-lg"
                   />
                 </div>
                 <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    LiteNote: Full-Stack Note-Taking App
+                    CourseBoard: A Dashboard for Subscription-Based Learning
+                    Platforms
                   </h2>
                   <p className="text-white-50 md:text-base mb-4">
-                    A comprehensive note-taking application with full-stack
-                    functionality for organizing and managing your thoughts.
+                    A frontend admin dashboard to manage courses, track
+                    subscriptions, and visualize engagement.
                   </p>
                   <div className="flex justify-center md:justify-start gap-3">
                     <a
-                      href="https://github.com/Renz-Eryll/LiteNote.git"
+                      href="https://github.com/Renz-Eryll/CourseBoard.git"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-purple-100 text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
@@ -204,7 +205,7 @@ const ShowcaseSection = () => {
                       View Code
                     </a>
                     <a
-                      href="https://litenote-kapw.onrender.com"
+                      href="https://courseboard.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-1 border-white-50 text-white-50 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/25 transform hover:-translate-y-0.5"
@@ -225,14 +226,14 @@ const ShowcaseSection = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0 w-full md:w-1/2">
                   <img
-                    src="/images/movie.svg"
+                    src="/images/filmfindr.svg"
                     alt="MovieApp"
                     className="w-full h-48 md:h-64 object-contain rounded-lg"
                   />
                 </div>
                 <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
                   <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    Movie Browsing App
+                    FilmFindr: A movie browsing app
                   </h2>
                   <p className="text-white-50 md:text-base mb-4">
                     A movie discovery application for browsing and exploring
