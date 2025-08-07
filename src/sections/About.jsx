@@ -94,25 +94,25 @@ const About = ({ index }) => {
                   <div className="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     <span className="text-white-50">
-                      Learning Backend Technologies like Node.js & Express
+                      Expanding skills in backend with PostgreSQL & Prisma ORM
                     </span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
                     <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                     <span className="text-white-50">
-                      Building Full-Stack Apps
+                      Connecting Frontend to Backend via RESTful APIs
                     </span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
                     <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
                     <span className="text-white-50">
-                      Exploring Cloud Platforms & Database Systems
+                      Enhancing Next.js Skills & Learning Best Practices
                     </span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-black/30 rounded-lg">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
                     <span className="text-white-50">
-                      Open Source Contributions
+                      Currently Developing Freelance Projects
                     </span>
                   </div>
                 </div>
