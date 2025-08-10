@@ -24,13 +24,13 @@ const Hero = () => {
       <div className="hero-layout">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
-            <p className="text-white-50 max-w-xl md:text-xl relative z-10 pointer-events-none">
+            <p className="flex items-center gap-2 text-white-50 max-w-xl md:text-xl relative z-10 pointer-events-none">
               Hello, I’m{" "}
               <span className="text-purple-50 font-extrabold">
                 <img
                   src="/renz-logo.png"
                   alt="logo"
-                  className="w-18 h-18 object-contain"
+                  className="w-12 h-12 object-contain"
                 />
               </span>
             </p>
