@@ -26,7 +26,13 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <p className="text-white-50 max-w-xl md:text-xl relative z-10 pointer-events-none">
               Hello, I’m{" "}
-              <span className="text-purple-50 font-extrabold">Renz</span>
+              <span className="text-purple-50 font-extrabold">
+                <img
+                  src="/renz-logo.png"
+                  alt="logo"
+                  className="w-18 h-18 object-contain"
+                />
+              </span>
             </p>
 
             <div className="hero-text">
