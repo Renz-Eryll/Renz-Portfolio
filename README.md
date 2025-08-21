@@ -14,12 +14,6 @@
 
 ---
 
-<p align="center">
-## MY PERSONAL PORTFOLIO
-</p>
-
----
-
 ##
 This is my personal portfolio website, built to showcase my projects, skills, and experiences. It combines **Three.js** for interactive 3D graphics, **GSAP** for smooth animations, and a **React + Tailwind CSS** stack for a fast and responsive design.
 
