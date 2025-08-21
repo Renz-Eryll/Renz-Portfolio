@@ -14,20 +14,14 @@
 
 ---
 
-##
-This is my personal portfolio website, built to showcase my projects, skills, and experiences.  
-It combines **Three.js** for interactive 3D graphics, **GSAP** for smooth animations, and a **React + Tailwind CSS** stack for a fast and responsive design.
+<p align="center">
+## MY PERSONAL PORTFOLIO
+</p>
 
 ---
 
-<p align="center">
-  <a href="#introduction">Introduction</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#features">Features</a> •
-  <a href="#demo">Demo</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#contact">Contact</a>
-</p>
+##
+This is my personal portfolio website, built to showcase my projects, skills, and experiences. It combines **Three.js** for interactive 3D graphics, **GSAP** for smooth animations, and a **React + Tailwind CSS** stack for a fast and responsive design.
 
 ---
 
