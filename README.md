@@ -60,38 +60,6 @@ Open **http://localhost:5173** in your browser to view the portfolio 🚀
 
 ---
 
-🛠 Tech Stack
-
-Frontend: React, Vite, Tailwind CSS
-
-Animations: GSAP
-
-3D Graphics: Three.js
-
-Deployment: Vercel
-
----
-
-📂 Folder Structure
-
-Renz-Portfolio/
-│── public/           # Static assets (images, icons, etc.)
-│── src/
-│   ├── assets/       # Project-specific assets
-│   ├── components/   # Reusable UI components
-│   ├── pages/        # Page-level components
-│   ├── styles/       # Tailwind and global styles
-│   ├── App.jsx       # Main App entry point
-│   └── main.jsx      # React DOM rendering
-│── package.json      # Project metadata and dependencies
-
----
-
-📜 License
-This project is licensed under the MIT License – feel free to use it as a reference for your own portfolio.
-
----
-
 ## 📧 Contact
 - **Name**: Renz Eryll Ramelo  
 - **LinkedIn**: [www.linkedin.com/in/renz-eryll-ramelo](https://www.linkedin.com/in/renz-eryll-ramelo)  
