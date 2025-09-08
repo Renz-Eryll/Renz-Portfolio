@@ -16,11 +16,15 @@ const Hero = () => {
   });
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section
+      id="home"
+      className="relative overflow-hidden"
+      role="banner"
+      aria-label="Hero Section"
+    >
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
+        <img src="/images/bg.png" alt="Background design" className="w-full" />
       </div>
-
       <div className="hero-layout">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
@@ -29,12 +33,11 @@ const Hero = () => {
               <span className="text-purple-50 font-extrabold">
                 <img
                   src="/renz-logo.png"
-                  alt="logo"
+                  alt="Renz logo"
                   className="w-12 h-12 object-contain"
                 />
               </span>
             </p>
-
             <div className="hero-text">
               <h1>
                 Turning
@@ -47,7 +50,7 @@ const Hero = () => {
                       >
                         <img
                           src={word.imgPath}
-                          alt="person"
+                          alt={`${word.text} icon`}
                           className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-purple-50"
                         />
                         <span>{word.text}</span>
@@ -59,7 +62,6 @@ const Hero = () => {
               <h1>Into Real,</h1>
               <h1>Working Projects</h1>
             </div>
-
             <Button
               text="Resume"
               className="md:w-60 md:h-16 w-40 h-12"

@@ -1,24 +1,32 @@
+import { lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import ShowcaseSection from "./sections/ShowcaseSection";
-import LogoShowcase from "./sections/LogoShowcase";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
+
+// Lazy load sections below the fold
+const ShowcaseSection = lazy(() => import("./sections/ShowcaseSection"));
+const About = lazy(() => import("./sections/About"));
+const Skills = lazy(() => import("./sections/Skills"));
+const Contact = lazy(() => import("./sections/Contact"));
+const Footer = lazy(() => import("./sections/Footer"));
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <ShowcaseSection />
-
-      <Skills />
-      <Contact />
-      <Footer />
-    </>
+    <HelmetProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <Suspense
+          fallback={<div className="flex-center min-h-screen">Loading...</div>}
+        >
+          <About />
+          <ShowcaseSection />
+          <Skills />
+          <Contact />
+          <Footer />
+        </Suspense>
+      </div>
+    </HelmetProvider>
   );
 };
 
