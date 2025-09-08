@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { HelmetProvider } from "react-helmet-async";
+
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 
@@ -12,7 +12,7 @@ const Footer = lazy(() => import("./sections/Footer"));
 
 const App = () => {
   return (
-    <HelmetProvider>
+    <>
       <div className="min-h-screen">
         <Navbar />
         <Hero />
@@ -26,7 +26,7 @@ const App = () => {
           <Footer />
         </Suspense>
       </div>
-    </HelmetProvider>
+    </>
   );
 };
 
