@@ -23,3 +23,5 @@ const FeatureCards = () => {
     </div>
   );
 };
+
+export default FeatureCards;
