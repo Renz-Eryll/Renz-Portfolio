@@ -1,45 +1,41 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
+  // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 10);
-  }, []);
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    // create an event listener for when the user scrolls
+    const handleScroll = () => {
+      // check if the user has scrolled down at least 10px
+      // if so, set the state to true
+      const isScrolled = window.scrollY > 10;
+      setScrolled(isScrolled);
+    };
 
+    // add the event listener to the window
+    window.addEventListener("scroll", handleScroll);
+
+    // cleanup the event listener when the component is unmounted
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header
-      className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}
-      role="navigation"
-    >
+    <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-        <a href="#home" className="logo" aria-label="Home">
+        <a href="#home" className="logo">
           <img
             src="/renz-logo.png"
-            alt="Renz Logo"
+            alt="logo"
             className="w-18 h-18 object-contain"
           />
         </a>
+
         <nav className="desktop">
           <ul>
             {navLinks.map(({ link, name }) => (
               <li key={name} className="group">
-                <a
-                  href={link}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .querySelector(link)
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  aria-label={`Navigate to ${name}`}
-                >
+                <a href={link}>
                   <span>{name}</span>
                   <span className="underline" />
                 </a>
@@ -47,17 +43,8 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <a
-          href="#contact"
-          className="contact-btn group"
-          aria-label="Contact me"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#contact")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
+
+        <a href="#contact" className="contact-btn group">
           <div className="inner">
             <span>Contact me</span>
           </div>

@@ -2,13 +2,17 @@ import React from "react";
 
 const Button = ({ text, className, id, href, download }) => {
   const handleClick = (e) => {
+    // Only prevent default if there's an id prop (for scroll)
     if (id) {
       e.preventDefault();
+
       const target = document.getElementById(id);
+
       if (target) {
         const offset = window.innerHeight * 0.15;
         const top =
           target.getBoundingClientRect().top + window.pageYOffset - offset;
+
         window.scrollTo({ top, behavior: "smooth" });
       }
     }
@@ -17,18 +21,15 @@ const Button = ({ text, className, id, href, download }) => {
   return (
     <a
       onClick={handleClick}
-      className={`${className || ""} cta-wrapper`}
+      className={`${className ?? ""} cta-wrapper`}
       href={href}
       {...(download ? { download } : {})}
-      aria-label={text}
     >
-      <div className="cta-button group" role="button" tabIndex={0}>
+      <div className="cta-button group">
         <div className="bg-circle" />
-        <p className="text text-white" style={{ transition: "all 0.3s" }}>
-          {text}
-        </p>
+        <p className="text text-white">{text}</p>
         <div className="arrow-wrapper">
-          <img src="/images/download2.svg" alt="Arrow icon" />
+          <img src="/images/download2.svg" alt="arrow" />
         </div>
       </div>
     </a>
