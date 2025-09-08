@@ -1,12 +1,66 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="./public/portfolio.png" alt="Portfolio Thumbnail" width="800"/>
+</p>
 
-Currently, two official plugins are available:
+## 
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+<h1 align="center">🚀 Renz Portfolio</h1>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<p align="center">
+  This is my personal portfolio website, built to showcase my projects, skills, and experiences.  
+  It combines <b>Three.js</b> for interactive 3D graphics, <b>GSAP</b> for smooth animations, and a  
+  <b>React + Tailwind CSS</b> stack for a fast and responsive design.
+</p>
+
+---
+
+## ✨ Features
+- 🎨 Responsive and modern design  
+- 🔥 Interactive 3D elements with **Three.js**  
+- 🌀 Smooth animations with **GSAP**  
+- ⚡ Fast performance with **React + Vite**  
+- 📱 Mobile-first approach  
+
+---
+
+## 🌐 Demo
+🔗 **Live Demo**: [Portfolio](https://renz-portfolio-psi.vercel.app)
+
+---
+
+## ⚡ Quick Start
+
+Follow these steps to get a local copy of the project up and running.
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/Renz-Eryll/Renz-Portfolio
+```
+
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Start the development server
+```bash
+npm run dev
+```
+
+Open **http://localhost:5173** in your browser to view the portfolio 🚀
+
+---
+
+## 📧 Contact
+- **Name**: Renz Eryll Ramelo  
+- **LinkedIn**: [www.linkedin.com/in/renz-eryll-ramelo](https://www.linkedin.com/in/renz-eryll-ramelo)  
+- **GitHub**: [https://github.com/Renz-Eryll](https://github.com/Renz-Eryll)  
