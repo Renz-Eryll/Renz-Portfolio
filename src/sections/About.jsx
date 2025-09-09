@@ -1,40 +1,136 @@
 import { useRef } from "react";
-
-import Experience from "./Experience";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 import TitleHeader from "../components/TitleHeader";
+import Experience from "./Experience";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = ({ index }) => {
-  // refs for all the cards
+  // refs for all the cards and sections
   const cardRefs = useRef([]);
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const introRef = useRef(null);
+  const focusRef = useRef(null);
+  const funFactRef = useRef(null);
 
   // when mouse moves over a card, rotate the glow effect
   const handleMouseMove = (index) => (e) => {
-    // get the current card
     const card = cardRefs.current[index];
     if (!card) return;
 
-    // get the mouse position relative to the card
     const rect = card.getBoundingClientRect();
     const mouseX = e.clientX - rect.left - rect.width / 2;
     const mouseY = e.clientY - rect.top - rect.height / 2;
 
-    // calculate the angle from the center of the card to the mouse
     let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
-
-    // adjust the angle so that it's between 0 and 360
     angle = (angle + 360) % 360;
 
-    // set the angle as a CSS variable
     card.style.setProperty("--start", angle + 60);
   };
 
+  // GSAP animations
+  useGSAP(() => {
+    // Main section fade-in
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // TitleHeader animation
+    gsap.from(headerRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Intro section slide-in
+    gsap.from(introRef.current, {
+      xPercent: -20,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: introRef.current,
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Card animations (staggered)
+    gsap.utils.toArray(cardRefs.current).forEach((card, idx) => {
+      gsap.from(card, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        delay: idx * 0.2, // Stagger effect
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+
+    // Current Focus section animation
+    gsap.from(focusRef.current, {
+      scale: 0.95,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: focusRef.current,
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Fun Fact section animation
+    gsap.from(funFactRef.current, {
+      xPercent: 20,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: funFactRef.current,
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
+
   return (
     <>
-      <section className="flex-center py-10 md:mt-20 mt-20 section-padding xl:px-0">
-        <div className="w-full h-full md:px-20 px-5 ">
-          <TitleHeader title="Know About Me" sub="👨‍💻 About Me" />
+      <section
+        ref={sectionRef}
+        className="flex-center py-10 md:mt-20 mt-20 section-padding xl:px-0"
+      >
+        <div className="w-full h-full md:px-20 px-5">
+          <div ref={headerRef}>
+            <TitleHeader title="Know About Me" sub="👨‍💻 About Me" />
+          </div>
           <div className="mt-5">
-            <div className="relative mb-7">
+            <div ref={introRef} className="relative mb-7">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg blur-3xl"></div>
               <div className="relative bg-black/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8 lg:p-12">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -60,7 +156,7 @@ const About = ({ index }) => {
                         <span className="text-2xl">🇵🇭</span>A Web Developer from
                         the Philippines
                       </p>
-                      <p className="flex items-center justify-center  gap-2 text-green-400 font-medium">
+                      <p className="flex items-center justify-center gap-2 text-green-400 font-medium">
                         <span className="relative flex h-3 w-3">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
@@ -72,7 +168,7 @@ const About = ({ index }) => {
                 </div>
               </div>
             </div>
-            <div className="">
+            <div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-7">
                 {[
                   {
@@ -112,7 +208,7 @@ const About = ({ index }) => {
               </div>
 
               {/* Current Focus Section */}
-              <div className="relative mb-7">
+              <div ref={focusRef} className="relative mb-7">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-3xl blur-2xl"></div>
                 <div className="relative bg-black/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8">
                   <div className="flex items-center gap-3 mb-8">
@@ -126,18 +222,22 @@ const About = ({ index }) => {
                     {[
                       {
                         color: "green",
+                        bgColor: "rgb(74, 222, 128)", // Tailwind's green-400
                         text: "Expanding skills in backend with PostgreSQL & Prisma ORM",
                       },
                       {
                         color: "blue",
+                        bgColor: "rgb(59, 130, 246)", // Tailwind's blue-400
                         text: "Connecting Frontend to Backend via RESTful APIs",
                       },
                       {
                         color: "purple",
+                        bgColor: "rgb(168, 85, 247)", // Tailwind's purple-400
                         text: "Enhancing Next.js Skills & Learning Best Practices",
                       },
                       {
                         color: "yellow",
+                        bgColor: "rgb(250, 204, 21)", // Tailwind's yellow-400
                         text: "Currently Developing Freelance Projects",
                       },
                     ].map((focus, idx) => (
@@ -147,10 +247,12 @@ const About = ({ index }) => {
                       >
                         <div className="flex items-center gap-3">
                           <div
-                            className={`relative w-3 h-3 bg-${focus.color}-400 rounded-full`}
+                            className="relative w-3 h-3 rounded-full"
+                            style={{ backgroundColor: focus.bgColor }}
                           >
                             <div
-                              className={`absolute inset-0 bg-${focus.color}-400 rounded-full animate-ping opacity-75`}
+                              className="absolute inset-0 rounded-full animate-ping opacity-75"
+                              style={{ backgroundColor: focus.bgColor }}
                             ></div>
                           </div>
                           <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-sm">
@@ -164,7 +266,7 @@ const About = ({ index }) => {
               </div>
 
               {/* Fun Fact Section */}
-              <div className="relative">
+              <div ref={funFactRef} className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 rounded-2xl blur-xl"></div>
                 <div className="relative bg-gradient-to-r from-gray-900/50 to-black/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-yellow-500/30 transition-all duration-300">
                   <div className="flex items-start gap-4">
