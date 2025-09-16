@@ -1,290 +1,271 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TitleHeader from "../components/TitleHeader";
-import { FaFigma, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import { FiFigma } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
   const sectionRef = useRef(null);
-  const project1Ref = useRef(null);
-  const project2Ref = useRef(null);
-  const project3Ref = useRef(null);
-  const project4Ref = useRef(null);
+  const projectRefs = useRef([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 3;
+
+  // Sample project data (expanded to test pagination)
+  const projects = [
+    {
+      id: 1,
+      title: "Sync It",
+      description:
+        "A storage and file sharing app built with Next.js 15 and Appwrite for seamless file management.",
+      image: "/images/syncit.svg",
+      github: "https://github.com/Renz-Eryll/SyncIt.git",
+      demo: "https://sync-it-project.vercel.app",
+      tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
+    },
+    {
+      id: 2,
+      title: "Resumind",
+      description:
+        "An AI-powered resume analyzer for job listings and resume matching.",
+      image: "/images/resumind.svg",
+      github: "https://github.com/Renz-Eryll/Resumind.git",
+      demo: "https://resumind-app.vercel.app",
+      tech: ["React Router", "Puter.js", "Tailwind CSS"],
+    },
+    {
+      id: 3,
+      title: "CourseBoard",
+      description:
+        "A frontend admin dashboard for managing courses and subscriptions.",
+      image: "/images/courseboard.svg",
+      github: "https://github.com/Renz-Eryll/CourseBoard.git",
+      demo: "https://courseboard.vercel.app",
+      tech: ["Next.js", "Tailwind CSS", "Shadcn UI"],
+    },
+    {
+      id: 4,
+      title: "FilmFindr",
+      description: "A movie discovery app with an intuitive user interface.",
+      image: "/images/filmfindr.svg",
+      github: "https://github.com/Renz-Eryll/MovieBrowsingApp.git",
+      demo: null,
+      tech: ["React.js", "TMDB API", "Tailwind CSS", "Appwrite"],
+    },
+  ];
+
+  // Pagination logic
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const currentProjects = projects.slice(
+    startIndex,
+    startIndex + projectsPerPage
+  );
 
   useGSAP(() => {
-    // Animation for the main section
+    // Section animation
     gsap.fromTo(
       sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
     );
 
-    // Animations for each project card
-    const cards = [
-      project1Ref.current,
-      project2Ref.current,
-      project3Ref.current,
-      project4Ref.current,
-    ];
+    // Card animations
+    projectRefs.current.forEach((card, index) => {
+      if (card) {
+        // Card entrance animation
+        gsap.fromTo(
+          card,
+          { opacity: 0, xPercent: -30, rotateY: 10 },
+          {
+            opacity: 1,
+            xPercent: 0,
+            rotateY: 0,
+            duration: 0.8,
+            delay: 0.15 * (index % projectsPerPage),
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
 
-    cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 50,
+        // Animate elements within each card
+        const image = card.querySelector("img");
+        const title = card.querySelector("h2");
+        const description = card.querySelector("p");
+        const techStack = card.querySelector(".tech-stack");
+        const buttons = card.querySelector(".buttons");
+
+        gsap.from([image, title, description, techStack, buttons], {
           opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.3 * (index + 1),
+          y: 20,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: "top 85%",
+            toggleActions: "play none none reverse",
           },
-        }
-      );
-
-      // Smooth hover animation setup
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          y: -5,
-          duration: 0.4,
-          ease: "power2.out",
         });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          y: 0,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      });
+      }
     });
-  }, []);
+  }, [currentPage]);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({
+      top: sectionRef.current.offsetTop - 100,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <section>
-      <div id="projects" ref={sectionRef} className="app-showcase">
-        <div className="w-full">
-          <div className="mb-10">
-            <TitleHeader
-              title="Personal Works and Web Apps"
-              sub="🚀 My Projects"
-            />
-          </div>
+    <section className="w-full padding-x-lg  py-16">
+      <div
+        id="projects"
+        ref={sectionRef}
+        className="container mx-auto px-4 xl:px-0"
+      >
+        <div className="mb-12">
+          <TitleHeader
+            title="Personal Works and Web Apps"
+            sub="🚀 My Projects"
+          />
+        </div>
 
-          {/* Single Column Card Layout */}
-          <div className="flex flex-col gap-8">
-            {/* Project Card 1 */}
+        {/* Grid Layout for Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentProjects.map((project, index) => (
             <div
-              ref={project1Ref}
-              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
+              key={project.id}
+              ref={(el) => (projectRefs.current[index] = el)}
+              className="relative card-border rounded-xl overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-shrink-0 w-full md:w-1/2">
-                  <img
-                    src="/images/syncit.svg"
-                    alt="Sync It"
-                    className="w-full h-48 md:h-64 object-contain rounded-lg"
-                  />
-                </div>
-                <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    Sync It: A Storage and File Sharing Platform
-                  </h2>
-                  <p className="text-white-50 md:text-base mb-4">
-                    A storage and file sharing app built with Next.js 15 and
-                    Appwrite for seamless file management.
-                  </p>
-                  <div className="flex justify-center md:justify-start gap-3">
-                    <a
-                      href="https://github.com/Renz-Eryll/SyncIt.git"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3  bg-purple-100 text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
-                    >
-                      <FaGithub size={18} />
-                      View Code
-                    </a>
-                    <a
-                      href="https://sync-it-project.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-1 border-white-50 text-white-50 rounded-lg text-sm font-semibold transition-all duration-300  hover:shadow-lg hover:shadow-purple-400/25 transform hover:-translate-y-0.5"
-                    >
-                      <FiExternalLink size={18} />
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
+              <div className="absolute inset-0 card-border rounded-xl blur-3xl "></div>
+              <div className="relative pointer-events-none">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
               </div>
-            </div>
-
-            {/* Project Card 2 */}
-            <div
-              ref={project2Ref}
-              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
-            >
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-shrink-0 w-full md:w-1/2">
-                  <img
-                    src="/images/resumind.svg"
-                    alt="Resumind"
-                    className="w-full h-48 md:h-64 object-contain rounded-lg"
-                  />
+              <div className="p-6 pointer-events-auto mb-3">
+                <h2 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-gray-300 text-sm mb-4">
+                  {project.description}
+                </p>
+                <div className="tech-stack flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-purple-10/10 text-purple-10 rounded-full text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    Resumind: AI-Powered Resume Analyzer App
-                  </h2>
-                  <p className="text-white-50 md:text-base mb-4">
-                    A resume analyzer tool that allows users to create job
-                    listings, upload resumes, and match them to requirements.
-                  </p>
-                  <div className="flex justify-center md:justify-start gap-3">
+                <div className="buttons flex gap-3">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-purple-800 text-white rounded-lg text-sm font-semibold hover:bg-purple-100 transition-colors z-10"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaGithub size={16} />
+                    Code
+                  </a>
+                  {project.demo ? (
                     <a
-                      href="https://github.com/Renz-Eryll/Resumind.git"
+                      href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-purple-100 text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg text-sm font-semibold hover:border-purple-500 hover:text-white transition-colors z-10"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <FaGithub size={18} />
-                      View Code
+                      <FiExternalLink size={16} />
+                      Demo
                     </a>
-                    <a
-                      href="https://resumind-app.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-1 border-white-50 text-white-50 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/25 transform hover:-translate-y-0.5"
+                  ) : (
+                    <span
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-400 rounded-lg text-sm font-semibold opacity-60 cursor-not-allowed z-10"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <FiExternalLink size={18} />
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Project Card 3 */}
-            <div
-              ref={project3Ref}
-              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
-            >
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-shrink-0 w-full md:w-1/2">
-                  <img
-                    src="/images/courseboard.svg"
-                    alt="courseboard"
-                    className="w-full h-48 md:h-64 object-contain rounded-lg"
-                  />
-                </div>
-                <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    CourseBoard: A Dashboard for Subscription-Based Learning
-                    Platforms
-                  </h2>
-                  <p className="text-white-50 md:text-base mb-4">
-                    A frontend admin dashboard to manage courses, track
-                    subscriptions, and visualize engagement.
-                  </p>
-                  <div className="flex justify-center md:justify-start gap-3">
-                    <a
-                      href="https://github.com/Renz-Eryll/CourseBoard.git"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-purple-100 text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
-                    >
-                      <FaGithub size={18} />
-                      View Code
-                    </a>
-                    <a
-                      href="https://courseboard.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-1 border-white-50 text-white-50 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/25 transform hover:-translate-y-0.5"
-                    >
-                      <FiExternalLink size={18} />
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 4 */}
-            <div
-              ref={project4Ref}
-              className="card-border rounded-2xl p-6 transition-all duration-300  cursor-pointer"
-            >
-              <div className="flex flex-col md:flex-row gap-6 items-center">
-                <div className="flex-shrink-0 w-full md:w-1/2">
-                  <img
-                    src="/images/filmfindr.svg"
-                    alt="MovieApp"
-                    className="w-full h-48 md:h-64 object-contain rounded-lg"
-                  />
-                </div>
-                <div className="flex-1 w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-                    FilmFindr: A movie browsing app
-                  </h2>
-                  <p className="text-white-50 md:text-base mb-4">
-                    A movie discovery application for browsing and exploring
-                    films with an intuitive user interface.
-                  </p>
-                  <div className="flex justify-center md:justify-start gap-3">
-                    <a
-                      href="https://github.com/Renz-Eryll/MovieBrowsingApp.git"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-purple-100 text-white rounded-lg text-sm font-semibold transition-all duration-300 hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
-                    >
-                      <FaGithub size={18} />
-                      View Code
-                    </a>
-                    <span className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 border-1 border-gray-600 text-gray-400 cursor-not-allowed rounded-lg text-sm font-semibold opacity-60">
-                      <FiExternalLink size={18} />
+                      <FiExternalLink size={16} />
                       Coming Soon
                     </span>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* More Projects Coming Soon Message */}
-          <div className="mt-10 text-center">
-            <div className="inline-flex flex-col items-center justify-center p-8 rounded-lg border-2 border-dashed border-gray-600 bg-gray-900/30">
-              <div className="w-12 h-12 mb-4 rounded-full bg-gray-800 flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-300 mb-2">
-                More Projects Coming Soon
-              </h3>
-              <p className="text-sm text-gray-500 max-w-md">
-                I'm constantly working on new and exciting projects. Stay tuned
-                for more innovative web applications and creative solutions!
-              </p>
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex justify-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  currentPage === page
+                    ? "bg-purple-50 text-white"
+                    : "bg-gray-800/50 text-gray-300 hover:bg-purple-50/20 hover:text-purple-400"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* More Projects Coming Soon */}
+        <div className="mt-12 text-center">
+          <div className="relative inline-flex flex-col items-center justify-center p-8 rounded-2xl bg-black/40 backdrop-blur-sm border border-gray-700/50">
+            <div className="absolute inset-0 rounded-2xl blur-xl"></div>
+            <div className="relative w-12 h-12 mb-4 rounded-full bg-gray-800/50 flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                />
+              </svg>
             </div>
+            <h3 className="text-lg font-semibold text-gray-300 mb-2">
+              More Projects Coming Soon
+            </h3>
+            <p className="text-sm text-gray-400 max-w-md">
+              I'm constantly working on new and exciting projects. Stay tuned
+              for more innovative web applications!
+            </p>
           </div>
         </div>
       </div>

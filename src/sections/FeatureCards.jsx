@@ -70,37 +70,6 @@ const FeatureCards = () => {
             toggleActions: "play none none reverse",
           },
         });
-
-        // Hover animation
-        card.addEventListener("mouseenter", () => {
-          gsap.to(card, {
-            y: -10,
-            scale: 1.02,
-            boxShadow: "0 10px 20px rgba(128, 0, 255, 0.2)",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-          gsap.to(image, {
-            scale: 1.1,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
-
-        card.addEventListener("mouseleave", () => {
-          gsap.to(card, {
-            y: 0,
-            scale: 1,
-            boxShadow: "none",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-          gsap.to(image, {
-            scale: 1,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
       }
     });
   }, []);
