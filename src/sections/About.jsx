@@ -131,8 +131,8 @@ const About = ({ index }) => {
           </div>
           <div className="mt-5">
             <div ref={introRef} className="relative mb-7">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg blur-3xl"></div>
-              <div className="relative bg-black/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8 lg:p-12">
+              <div className="absolute inset-0 "></div>
+              <div className="relative  p-8 lg:p-12">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-1 text-center lg:text-left">
                     <div className="flex justify-center items-center gap-3 mb-6">
@@ -192,9 +192,9 @@ const About = ({ index }) => {
                     key={idx}
                     ref={(el) => (cardRefs.current[idx] = el)}
                     onMouseMove={handleMouseMove(idx)}
-                    className="group relative overflow-hidden backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10"
+                    className="group relative card-border overflow-hidden backdrop-blur-sm  rounded-2xl p-6  transition-all duration-300 "
                   >
-                    <div className="absolute inset-0 card-border via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 card-border via-transparent to-blue-500/5 opacity-0 transition-opacity duration-300"></div>
                     <div className="relative flex items-start gap-4">
                       <div className="text-3xl p-2 bg-gray-800/50 rounded-xl group-hover:scale-110 transition-transform duration-300">
                         {item.icon}
@@ -209,8 +209,8 @@ const About = ({ index }) => {
 
               {/* Current Focus Section */}
               <div ref={focusRef} className="relative mb-7">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-black/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8">
+                <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
+                <div className="relative  rounded-xl pt-6">
                   <div className="flex items-center gap-3 mb-8">
                     <div className="text-4xl">🎯</div>
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
@@ -243,7 +243,7 @@ const About = ({ index }) => {
                     ].map((focus, idx) => (
                       <div
                         key={idx}
-                        className="group relative overflow-hidden bg-gray-900/30 border border-gray-700/30 rounded-xl p-4 hover:border-gray-600/50 transition-all duration-300"
+                        className="group relative overflow-hidden card-border  rounded-xl p-4 "
                       >
                         <div className="flex items-center gap-3">
                           <div
@@ -267,8 +267,8 @@ const About = ({ index }) => {
 
               {/* Fun Fact Section */}
               <div ref={funFactRef} className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 rounded-2xl blur-xl"></div>
-                <div className="relative bg-gradient-to-r from-gray-900/50 to-black/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-yellow-500/30 transition-all duration-300">
+                <div className="absolute inset-0  rounded-2xl blur-xl"></div>
+                <div className="relative card-border  rounded-2xl p-6">
                   <div className="flex items-start gap-4">
                     <div className="text-4xl p-2 bg-yellow-500/10 rounded-xl">
                       💡
