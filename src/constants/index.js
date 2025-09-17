@@ -30,7 +30,7 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 12, suffix: "+", label: "Months of Experience" },
+  { value: 10, suffix: "+", label: "Months of Experience" },
   { value: 3, suffix: "+", label: "Satisfied Clients" },
   { value: 7, suffix: "+", label: "Completed Projects" },
   { value: 2, suffix: "+", label: "Teams Worked With" },
@@ -115,7 +115,7 @@ const experience = [
   {
     desc: "This project serves as our capstone project / thesis, featuring an IoT-enabled web-based system designed to enhance stingless bee honey production",
     link: "https://github.com/CJcode6754/BeeMo.git",
-    imgPath: "/images/beemo.svg",
+    imgPath: "/images/beemo-thumbnail.svg",
     logoPath: "/images/logos/HTML5.svg",
     title: "Frontend Developer, Arduino Programmer",
     date: "May 2024 - November 2024",

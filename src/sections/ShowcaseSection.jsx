@@ -18,23 +18,23 @@ const ShowcaseSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Sync It",
+      title: "SubTrack",
       description:
-        "A storage and file sharing app built with Next.js 15 and Appwrite for seamless file management.",
-      image: "/images/syncit.svg",
-      github: "https://github.com/Renz-Eryll/SyncIt.git",
-      demo: "https://sync-it-project.vercel.app",
-      tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
+        " Subscription management system for users and transactions.",
+      image: "/images/SubTrack.svg",
+      github: "",
+      demo: "",
+      tech: ["Express.js", "Node.js", "MongoDB", "JWT"],
     },
     {
       id: 2,
-      title: "Resumind",
+      title: "Postagram",
       description:
-        "An AI-powered resume analyzer for job listings and resume matching.",
-      image: "/images/resumind.svg",
-      github: "https://github.com/Renz-Eryll/Resumind.git",
-      demo: "https://resumind-app.vercel.app",
-      tech: ["React Router", "Puter.js", "Tailwind CSS"],
+        " Social media web application with user authentication, post creation, and real-time updates.",
+      image: "/images/postagram-thumbnail.svg",
+      github: "https://github.com/Renz-Eryll/Postagram.git",
+      demo: "https://postagram-app.vercel.app",
+      tech: ["Next.js", "Neon PostgreSQL", "Prisma", "Clerk", "Shadcn UI"],
     },
     {
       id: 3,
@@ -48,8 +48,30 @@ const ShowcaseSection = () => {
     },
     {
       id: 4,
+      title: "Resumind",
+      description:
+        "An AI-powered resume analyzer for job listings and resume matching.",
+      image: "/images/resumind-thumbnail.svg",
+      github: "https://github.com/Renz-Eryll/Resumind.git",
+      demo: "https://resumind-app.vercel.app",
+      tech: ["React Router", "Puter.js", "Tailwind CSS"],
+    },
+    {
+      id: 5,
+      title: "Sync It",
+      description:
+        "A storage and file sharing app built with Next.js 15 and Appwrite for seamless file management.",
+      image: "/images/syncit.svg",
+      github: "https://github.com/Renz-Eryll/SyncIt.git",
+      demo: "https://sync-it-project.vercel.app",
+      tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
+    },
+
+    {
+      id: 6,
       title: "FilmFindr",
-      description: "A movie discovery app with an intuitive user interface.",
+      description:
+        "A movie discovery app with an intuitive user interface with TMDB API.",
       image: "/images/filmfindr.svg",
       github: "https://github.com/Renz-Eryll/MovieBrowsingApp.git",
       demo: null,
@@ -165,7 +187,7 @@ const ShowcaseSection = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/65 to-transparent"></div>
               </div>
               <div className="p-6 pointer-events-auto mb-3">
                 <h2 className="text-xl font-bold text-white mb-2">
