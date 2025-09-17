@@ -3,27 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/r2.png" />
+    <link rel="preload" href="/r2.png" as="image" />
+    <!-- Preload favicon for faster LCP -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Renz's Portfolio - Showcasing design and development projects."
+      content="Renz's Portfolio - Showcasing innovative design and development projects in 3D, React, and interactive web experiences."
     />
-    <meta
-      name="keywords"
-      content="Renz, portfolio, design, development, 3D, React"
-    />
+    <!-- Removed: <meta name="keywords"> (deprecated and ignored by search engines) -->
     <meta name="author" content="Renz" />
-    <meta property="og:title" content="Renz Portfolio" />
+
+    <!-- Open Graph for social sharing -->
+    <meta
+      property="og:title"
+      content="Renz Portfolio | Design & Development Projects"
+    />
     <meta
       property="og:description"
-      content="Explore Renz's design and development work."
+      content="Explore Renz's portfolio of design and development work, featuring 3D models, React apps, and creative web projects."
     />
     <meta property="og:image" content="/r2.png" />
     <meta property="og:url" content="https://renz-portfolio-psi.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Renz Portfolio" />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@renzerill" />
+    <!-- Replace with your actual Twitter handle if available -->
+    <meta
+      name="twitter:title"
+      content="Renz Portfolio | Design & Development Projects"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Renz's portfolio of design and development work."
+    />
+    <meta name="twitter:image" content="/r2.png" />
+
+    <!-- Canonical URL to avoid duplicates -->
+    <link rel="canonical" href="https://renz-portfolio-psi.vercel.app" />
+
+    <!-- Preconnect and DNS prefetch for Google Fonts (already good, but added preload for critical font if you specify one) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <title>Renz Portfolio</title>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      as="style"
+    />
+
+    <!-- JSON-LD Structured Data for Person Schema (add your details) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Renz",
+        "url": "https://renz-portfolio-psi.vercel.app",
+        "image": "/r2.png",
+        "description": "Full-stack developer and designer specializing in React applications, and interactive web experiences.",
+        "jobTitle": "Developer & Designer",
+        "knowsAbout": ["Web Development"],
+        "sameAs": [
+          "https://twitter.com/yourtwitter", // Add your social profiles
+          "https://linkedin.com/in/yourprofile",
+          "https://github.com/yourusername"
+        ]
+      }
+    </script>
+
+    <title>Renz Portfolio | Design & Development Projects</title>
   </head>
   <body>
     <div id="root"></div>

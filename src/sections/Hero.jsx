@@ -16,7 +16,12 @@ const Hero = () => {
   });
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden" role="banner">
+      <meta
+        name="description"
+        content="Welcome to Renz's portfolio, showcasing  design and Full stack development projects."
+      />
+      <meta name="robots" content="index, follow" />
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="background" />
       </div>
@@ -63,7 +68,7 @@ const Hero = () => {
             <Button
               text="Resume"
               className="md:w-60 md:h-16 w-40 h-12"
-              href="/files/Renz Eryll Ramelo-(Resume).pdf"
+              href="/files/Renz Eryll Ramelo - Resume.pdf"
               download
             />
           </div>

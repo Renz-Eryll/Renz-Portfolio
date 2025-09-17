@@ -124,12 +124,13 @@ const About = ({ index }) => {
       <section
         ref={sectionRef}
         className="flex-center py-10 md:mt-20 mt-20 section-padding xl:px-0"
+        aria-labelledby="about-heading"
       >
         <div className="w-full h-full md:px-20 px-5">
           <div ref={headerRef}>
             <TitleHeader title="Know About Me" sub="👨‍💻 About Me" />
           </div>
-          <div className="mt-5">
+          <article className="mt-5">
             <div ref={introRef} className="relative mb-7">
               <div className="absolute inset-0 "></div>
               <div className="relative  p-8 lg:p-12">
@@ -287,7 +288,7 @@ const About = ({ index }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
       <Experience />

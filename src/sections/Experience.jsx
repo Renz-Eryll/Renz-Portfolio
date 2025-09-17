@@ -68,7 +68,7 @@ const Experience = () => {
         <div className="mt-20 relative">
           <div className="relative z-50 xl:space-y-32 space-y-10">
             {experience.map((card) => (
-              <div key={card.title} className="exp-card-wrapper">
+              <article key={card.title} className="exp-card-wrapper">
                 <div className="xl:w-2/6">
                   <GlowCard card={card}>
                     <div className="flex justify-center">
@@ -78,6 +78,7 @@ const Experience = () => {
                         width={320}
                         height={300}
                         className="rounded-lg"
+                        loading="lazy"
                       />
                     </div>
                   </GlowCard>
@@ -118,7 +119,7 @@ const Experience = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
