@@ -14,7 +14,6 @@ const ShowcaseSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 3;
 
-  // Sample project data (expanded to test pagination)
   const projects = [
     {
       id: 1,
@@ -22,7 +21,7 @@ const ShowcaseSection = () => {
       description:
         " Subscription management system for users and transactions.",
       image: "/images/SubTrack.svg",
-      github: "",
+      github: "https://github.com/Renz-Eryll/SubTrack.git",
       demo: "",
       tech: ["Express.js", "Node.js", "MongoDB", "JWT"],
     },
@@ -159,13 +158,13 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section className="w-full padding-x-lg  py-16">
+    <section className="w-full padding-x-lg  py-20">
       <div
         id="projects"
         ref={sectionRef}
         className="container mx-auto px-4 xl:px-0"
       >
-        <div className="mb-12">
+        <div className="mb-18">
           <TitleHeader
             title="Personal Works and Web Apps"
             sub="🚀 My Projects"
@@ -245,7 +244,7 @@ const ShowcaseSection = () => {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="mt-12 flex justify-center gap-2">
+          <div className="mt-5 flex justify-center gap-2">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
@@ -261,35 +260,6 @@ const ShowcaseSection = () => {
             ))}
           </div>
         )}
-
-        {/* More Projects Coming Soon */}
-        <div className="mt-12 text-center">
-          <div className="relative inline-flex flex-col items-center justify-center p-8 rounded-2xl bg-black/40 backdrop-blur-sm border border-gray-700/50">
-            <div className="absolute inset-0 rounded-2xl blur-xl"></div>
-            <div className="relative w-12 h-12 mb-4 rounded-full bg-gray-800/50 flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-300 mb-2">
-              More Projects Coming Soon
-            </h3>
-            <p className="text-sm text-gray-400 max-w-md">
-              I'm constantly working on new and exciting projects. Stay tuned
-              for more innovative web applications!
-            </p>
-          </div>
-        </div>
       </div>
       <div id="skills"></div>
     </section>

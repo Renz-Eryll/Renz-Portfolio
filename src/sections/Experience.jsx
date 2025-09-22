@@ -56,7 +56,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="flex-center py-20 md:mt-5 mt-20 section-padding xl:px-0"
+      className="flex-center md:mt-20 mt-20 section-padding xl:px-0"
       role="region"
       aria-label="Experience Timeline"
     >

@@ -57,7 +57,7 @@ const Contact = () => {
           title="Get in Touch – Let’s Connect"
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
-        <div className="grid-12-cols mt-16">
+        <div className="grid-12-cols mt-5">
           <div
             ref={contact2Ref}
             className="xl:col-span-5 space-y-6 px-8 py-10 rounded-xl"

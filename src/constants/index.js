@@ -8,13 +8,12 @@ const navLinks = [
     link: "#about",
   },
   {
+    name: "Experience",
+    link: "#experience",
+  },
+  {
     name: "Projects",
     link: "#projects",
-  },
-
-  {
-    name: "Skills",
-    link: "#skills",
   },
 ];
 
@@ -75,6 +74,69 @@ const logoIconsList = [
   },
   {
     imgPath: "/images/logos/Firebase.svg",
+  },
+];
+
+const projects = [
+  {
+    id: 1,
+    title: "SubTrack",
+    description: " Subscription management system for users and transactions.",
+    image: "/images/SubTrack.svg",
+    github: "https://github.com/Renz-Eryll/SubTrack.git",
+    demo: "",
+    tech: ["Express.js", "Node.js", "MongoDB", "JWT"],
+  },
+  {
+    id: 2,
+    title: "Postagram",
+    description:
+      " Social media web application with user authentication, post creation, and real-time updates.",
+    image: "/images/postagram-thumbnail.svg",
+    github: "https://github.com/Renz-Eryll/Postagram.git",
+    demo: "https://postagram-app.vercel.app",
+    tech: ["Next.js", "Neon PostgreSQL", "Prisma", "Clerk", "Shadcn UI"],
+  },
+  {
+    id: 3,
+    title: "CourseBoard",
+    description:
+      "A frontend admin dashboard for managing courses and subscriptions.",
+    image: "/images/courseboard.svg",
+    github: "https://github.com/Renz-Eryll/CourseBoard.git",
+    demo: "https://courseboard.vercel.app",
+    tech: ["Next.js", "Tailwind CSS", "Shadcn UI"],
+  },
+  {
+    id: 4,
+    title: "Resumind",
+    description:
+      "An AI-powered resume analyzer for job listings and resume matching.",
+    image: "/images/resumind-thumbnail.svg",
+    github: "https://github.com/Renz-Eryll/Resumind.git",
+    demo: "https://resumind-app.vercel.app",
+    tech: ["React Router", "Puter.js", "Tailwind CSS"],
+  },
+  {
+    id: 5,
+    title: "Sync It",
+    description:
+      "A storage and file sharing app built with Next.js 15 and Appwrite for seamless file management.",
+    image: "/images/syncit.svg",
+    github: "https://github.com/Renz-Eryll/SyncIt.git",
+    demo: "https://sync-it-project.vercel.app",
+    tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
+  },
+
+  {
+    id: 6,
+    title: "FilmFindr",
+    description:
+      "A movie discovery app with an intuitive user interface with TMDB API.",
+    image: "/images/filmfindr.svg",
+    github: "https://github.com/Renz-Eryll/MovieBrowsingApp.git",
+    demo: null,
+    tech: ["React.js", "TMDB API", "Tailwind CSS", "Appwrite"],
   },
 ];
 

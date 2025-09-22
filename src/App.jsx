@@ -6,6 +6,7 @@ import About from "./sections/About";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import Experience from "./sections/Experience";
 
 const App = () => {
   return (
@@ -13,9 +14,9 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
-      <ShowcaseSection />
-
+      <Experience />
       <Skills />
+      <ShowcaseSection />
       <Contact />
       <Footer />
     </>

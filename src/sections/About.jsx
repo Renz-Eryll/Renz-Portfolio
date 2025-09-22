@@ -130,13 +130,13 @@ const About = ({ index }) => {
           <div ref={headerRef}>
             <TitleHeader title="Know About Me" sub="👨‍💻 About Me" />
           </div>
-          <article className="mt-5">
-            <div ref={introRef} className="relative mb-7">
+          <article className="mt-0">
+            <div ref={introRef} className="relative mb-2">
               <div className="absolute inset-0 "></div>
-              <div className="relative  p-8 lg:p-12">
+              <div className="relative p-2">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-1 text-center lg:text-left">
-                    <div className="flex justify-center items-center gap-3 mb-6">
+                    <div className="flex justify-center items-center gap-3 mb-3">
                       <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white">
                         I'm{" "}
                         <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
@@ -170,7 +170,7 @@ const About = ({ index }) => {
               </div>
             </div>
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-7">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-7 mb-7">
                 {[
                   {
                     icon: "🎓",
@@ -291,7 +291,6 @@ const About = ({ index }) => {
           </article>
         </div>
       </section>
-      <Experience />
     </>
   );
 };
