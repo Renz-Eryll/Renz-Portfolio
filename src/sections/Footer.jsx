@@ -14,11 +14,6 @@ const Footer = () => {
             All rights reserved.
           </p>
         </div>
-        <div className="flex flex-col justify-center">
-          <a href="#top" aria-label="Back to top">
-            ↑
-          </a>
-        </div>
       </div>
     </footer>
   );

@@ -136,8 +136,8 @@ const About = ({ index }) => {
               <div className="relative p-2">
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className="flex-1 text-center lg:text-left">
-                    <div className="flex justify-center items-center gap-3 mb-3">
-                      <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white">
+                    <div className="flex flex-col sm:flex-row justify-center lg:justify-center items-center gap-3 mb-3">
+                      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white break-words">
                         I'm{" "}
                         <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                           Renz
@@ -148,17 +148,17 @@ const About = ({ index }) => {
                         src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif"
                         width="40px"
                         alt="wave"
-                        className="animate-bounce"
+                        className="animate-bounce w-8 h-8 sm:w-10 sm:h-10"
                       />
                     </div>
 
-                    <div className="space-y-4 text-lg text-gray-300">
-                      <p className="flex items-center justify-center gap-2">
-                        <span className="text-2xl">🇵🇭</span>A Web Developer from
-                        the Philippines
+                    <div className="space-y-4 text-base sm:text-lg text-gray-300">
+                      <p className="flex items-center justify-center lg:justify-center gap-2 flex-wrap">
+                        <span className="text-xl sm:text-2xl">🇵🇭</span>A Web
+                        Developer from the Philippines
                       </p>
-                      <p className="flex items-center justify-center gap-2 text-green-400 font-medium">
-                        <span className="relative flex h-3 w-3">
+                      <p className="flex items-center justify-center lg:justify-center gap-2 text-green-400 font-medium flex-wrap">
+                        <span className="relative flex h-3 w-3 flex-shrink-0">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                         </span>
@@ -193,14 +193,14 @@ const About = ({ index }) => {
                     key={idx}
                     ref={(el) => (cardRefs.current[idx] = el)}
                     onMouseMove={handleMouseMove(idx)}
-                    className="group relative card-border overflow-hidden backdrop-blur-sm  rounded-2xl p-6  transition-all duration-300 "
+                    className="group relative card-border overflow-hidden backdrop-blur-sm rounded-2xl p-6 transition-all duration-300"
                   >
                     <div className="absolute inset-0 card-border via-transparent to-blue-500/5 opacity-0 transition-opacity duration-300"></div>
                     <div className="relative flex items-start gap-4">
-                      <div className="text-3xl p-2 bg-gray-800/50 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-2xl sm:text-3xl p-2 bg-gray-800/50 rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         {item.icon}
                       </div>
-                      <p className="text-gray-300 text-base leading-relaxed flex-1 group-hover:text-white transition-colors duration-300">
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed flex-1 group-hover:text-white transition-colors duration-300">
                         {item.text}
                       </p>
                     </div>
@@ -211,10 +211,10 @@ const About = ({ index }) => {
               {/* Current Focus Section */}
               <div ref={focusRef} className="relative mb-7">
                 <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
-                <div className="relative  rounded-xl pt-6">
+                <div className="relative rounded-xl pt-6">
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="text-4xl">🎯</div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                    <div className="text-3xl sm:text-4xl">🎯</div>
+                    <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                       Currently Focused On
                     </h3>
                   </div>
@@ -244,11 +244,11 @@ const About = ({ index }) => {
                     ].map((focus, idx) => (
                       <div
                         key={idx}
-                        className="group relative overflow-hidden card-border  rounded-xl p-4 "
+                        className="group relative overflow-hidden card-border rounded-xl p-4"
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-start sm:items-center gap-3">
                           <div
-                            className="relative w-3 h-3 rounded-full"
+                            className="relative w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full flex-shrink-0 mt-1 sm:mt-0"
                             style={{ backgroundColor: focus.bgColor }}
                           >
                             <div
@@ -256,7 +256,7 @@ const About = ({ index }) => {
                               style={{ backgroundColor: focus.bgColor }}
                             ></div>
                           </div>
-                          <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-sm">
+                          <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-xs sm:text-sm">
                             {focus.text}
                           </span>
                         </div>
@@ -268,18 +268,18 @@ const About = ({ index }) => {
 
               {/* Fun Fact Section */}
               <div ref={funFactRef} className="relative">
-                <div className="absolute inset-0  rounded-2xl blur-xl"></div>
-                <div className="relative card-border  rounded-2xl p-6">
+                <div className="absolute inset-0 rounded-2xl blur-xl"></div>
+                <div className="relative card-border rounded-2xl p-6">
                   <div className="flex items-start gap-4">
-                    <div className="text-4xl p-2 bg-yellow-500/10 rounded-xl">
+                    <div className="text-3xl sm:text-4xl p-2 bg-yellow-500/10 rounded-xl flex-shrink-0">
                       💡
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-yellow-400 mb-2 flex items-center gap-2">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-lg sm:text-xl font-bold text-yellow-400 mb-2 flex items-center gap-2 flex-wrap">
                         Fun Fact
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse flex-shrink-0"></div>
                       </h4>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                         We developed an IoT-enabled stingless bee hive
                         monitoring system for our capstone project. 🐝🐝🐝
                       </p>
