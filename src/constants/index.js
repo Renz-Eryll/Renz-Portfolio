@@ -45,12 +45,12 @@ const logoIconsList = [
   {
     imgPath: "/images/logos/Tailwind.svg",
   },
-  {
-    imgPath: "/images/logos/Postman.svg",
-  },
 
   {
     imgPath: "/images/logos/Node.js.svg",
+  },
+  {
+    imgPath: "/images/logos/Express.png",
   },
   {
     imgPath: "/images/logos/TypeScript.svg",
@@ -61,19 +61,17 @@ const logoIconsList = [
   {
     imgPath: "/images/logos/JavaScript.svg",
   },
-
+  {
+    imgPath: "/images/logos/Bootstrap.svg",
+  },
   {
     imgPath: "/images/logos/MongoDB.svg",
   },
   {
-    imgPath: "/images/logos/Bootstrap.svg",
+    imgPath: "/images/logos/PostgresSQL.png",
   },
-
   {
     imgPath: "/images/logos/Appwrite.svg",
-  },
-  {
-    imgPath: "/images/logos/Firebase.svg",
   },
 ];
 
