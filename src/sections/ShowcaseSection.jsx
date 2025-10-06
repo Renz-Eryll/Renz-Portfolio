@@ -47,6 +47,16 @@ const ShowcaseSection = () => {
     },
     {
       id: 4,
+      title: "Memory Game",
+      description:
+        "An engaging memory game built to challenge your cognitive skills.",
+      image: "/images/memoryGame-thumbnail.svg",
+      github: "https://github.com/Renz-Eryll/Memory_Game.git",
+      demo: "https://memory-concentration-game.vercel.app",
+      tech: ["React.js", "TypeScript", "SCSS"],
+    },
+    {
+      id: 5,
       title: "Resumind",
       description:
         "An AI-powered resume analyzer for job listings and resume matching.",
@@ -56,7 +66,7 @@ const ShowcaseSection = () => {
       tech: ["React Router", "Puter.js", "Tailwind CSS"],
     },
     {
-      id: 5,
+      id: 6,
       title: "Sync It",
       description:
         "A storage and file sharing app built with Next.js 15 and Appwrite for seamless file management.",
@@ -67,7 +77,7 @@ const ShowcaseSection = () => {
     },
 
     {
-      id: 6,
+      id: 7,
       title: "FilmFindr",
       description:
         "A movie discovery app with an intuitive user interface with TMDB API.",
