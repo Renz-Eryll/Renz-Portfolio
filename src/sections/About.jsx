@@ -171,24 +171,7 @@ const About = ({ index }) => {
             </div>
             <div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-7 mb-7">
-                {[
-                  {
-                    icon: "🎓",
-                    text: "I'm an aspiring web developer passionate about building responsive and efficient web applications.",
-                  },
-                  {
-                    icon: "🌱",
-                    text: "Currently exploring more about backend technologies and full-stack system.",
-                  },
-                  {
-                    icon: "🤝",
-                    text: "Strong believer in teamwork, clean code, and continuous learning.",
-                  },
-                  {
-                    icon: "🎮",
-                    text: "When I'm not coding, I love gaming and listening to music.",
-                  },
-                ].map((item, idx) => (
+                {[].map((item, idx) => (
                   <div
                     key={idx}
                     ref={(el) => (cardRefs.current[idx] = el)}
