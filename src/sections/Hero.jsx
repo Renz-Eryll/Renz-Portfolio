@@ -26,9 +26,7 @@ const Hero = () => {
         content="Welcome to Renz's portfolio, showcasing  design and Full stack development projects."
       />
       <meta name="robots" content="index, follow" />
-      <div className="absolute top-0 left-0 z-10 hidden md:block">
-        <img src="/images/bg.png" alt="background" />
-      </div>
+      <div className="absolute top-0 left-0 z-10 hidden md:block"></div>
 
       <div className="hero-layout">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
