@@ -504,3 +504,208 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+
+section {
+  width: 100dvw;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+
+  /* Unified section spacing with generous vertical gaps */
+  .section-padding {
+    @apply px-5 md:px-10 lg:px-20 mt-14 md:mt-22 lg:mt-30 mb-6 md:mb-10;
+  }
+
+  /* For sections that need consistent top and bottom margins */
+  .section-standard {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-16 md:mb-20;
+  }
+
+  .padding-x {
+    @apply px-5 md:px-10 lg:px-20;
+  }
+
+  .padding-x-lg {
+    @apply px-5 md:px-10 lg:px-20;
+  }
+
+  /* Mobile navbar styling */
+  .navbar {
+    @apply fixed w-full left-1/2 py-4 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
+
+    &.scrolled {
+      @apply top-0 bg-black;
+    }
+
+    &.not-scrolled {
+      @apply md:top-10 top-0 bg-transparent;
+    }
+
+    .inner {
+      @apply mx-auto flex items-center justify-between;
+    }
+
+    .logo {
+      @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+    }
+
+    nav.desktop {
+      @apply hidden lg:flex items-center;
+
+      ul {
+        @apply flex space-x-8;
+
+        li {
+          @apply text-white-50 relative;
+
+          span {
+            @apply transition-colors duration-300 hover:text-white;
+          }
+
+          .underline {
+            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-100 transition-all duration-300 group-hover:w-full;
+          }
+        }
+      }
+    }
+
+    .contact-btn {
+      @apply flex;
+
+      .inner {
+        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+
+        span {
+          @apply group-hover:text-white transition-colors duration-300;
+        }
+      }
+    }
+  }
+
+  /* Hero section specific - larger top spacing */
+  .hero-layout {
+    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center mb-24 md:mb-32;
+  }
+
+  /* Home/Hero section */
+  #home {
+    @apply mt-0 mb-0;
+  }
+
+  /* About section */
+  #about {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+  }
+
+  /* Experience section */
+  #experience {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+  }
+
+  /* Skills section */
+  #skills {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+  }
+
+  /* Projects section */
+  #projects {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+  }
+
+  /* Contact section */
+  #contact {
+    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+  }
+
+  /* Footer */
+  .footer {
+    @apply mt-24 md:mt-32 mb-10 md:mb-16 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
+
+    .footer-container {
+      @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 w-full;
+    }
+
+    p {
+      @apply text-center md:text-start cursor-pointer;
+    }
+
+    .socials {
+      @apply flex items-center justify-center gap-5;
+
+      .icon {
+        @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+      }
+
+      img {
+        @apply inline-block;
+      }
+    }
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 640px) {
+    .section-padding {
+      @apply px-5 mt-20 mb-16;
+    }
+
+    section {
+      @apply px-5;
+    }
+
+    .padding-x {
+      @apply px-5;
+    }
+
+    .padding-x-lg {
+      @apply px-5;
+    }
+
+    .hero-layout {
+      @apply mb-20;
+    }
+
+    #about,
+    #experience,
+    #skills,
+    #projects,
+    #contact {
+      @apply mt-20 mb-20;
+    }
+  }
+
+  /* Tablet responsive adjustments */
+  @media (max-width: 1024px) {
+    .section-padding {
+      @apply mt-28 mb-20;
+    }
+
+    .hero-layout {
+      @apply mb-28;
+    }
+  }
+}
+
+/* Mobile menu animations */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

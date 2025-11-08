@@ -24,7 +24,10 @@ const Skills = () => {
 
   return (
     <>
-      <section className="w-full flex-center section-padding xl:px-0">
+      <section
+        id="skills"
+        className="w-full flex-center section-padding xl:px-0"
+      >
         {/* <div className="mt-15 frontend flex flex-wrap justify-center gap-7">
             {frontendIcons.map((logo, index) => (
               <div

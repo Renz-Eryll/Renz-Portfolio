@@ -56,11 +56,11 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="flex-center md:mt-20 mt-20 section-padding xl:px-0"
+      className="flex-center section-padding xl:px-0"
       role="region"
       aria-label="Experience Timeline"
     >
-      <div className="w-full h-full md:px-20 px-5">
+      <div className="w-full section-padding h-full md:px-20 px-5">
         <TitleHeader
           title="Team Development Timeline"
           sub="🚀 Web Dev Experience"

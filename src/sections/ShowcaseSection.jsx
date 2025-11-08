@@ -168,11 +168,10 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section className="w-full padding-x-lg  py-20">
+    <section id="projects" className="w-full section-padding xl:px-0">
       <div
-        id="projects"
         ref={sectionRef}
-        className="container mx-auto px-4 xl:px-0"
+        className="w-full h-full section-padding md:px-20 px-5"
       >
         <div className="mb-18">
           <TitleHeader
@@ -271,7 +270,6 @@ const ShowcaseSection = () => {
           </div>
         )}
       </div>
-      <div id="skills"></div>
     </section>
   );
 };

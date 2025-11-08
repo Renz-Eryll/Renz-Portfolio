@@ -16,7 +16,11 @@ const Hero = () => {
   });
 
   return (
-    <section id="home" className="relative overflow-hidden" role="banner">
+    <section
+      id="home"
+      className="relative overflow-hidden section-padding"
+      role="banner"
+    >
       <meta
         name="description"
         content="Welcome to Renz's portfolio, showcasing  design and Full stack development projects."

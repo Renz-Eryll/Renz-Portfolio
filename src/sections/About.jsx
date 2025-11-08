@@ -122,8 +122,9 @@ const About = ({ index }) => {
   return (
     <>
       <section
+        id="about"
         ref={sectionRef}
-        className="flex-center py-10 md:mt-20 mt-20 section-padding xl:px-0"
+        className="flex-center section-padding xl:px-0"
         aria-labelledby="about-heading"
       >
         <div className="w-full h-full md:px-20 px-5">
@@ -152,10 +153,9 @@ const About = ({ index }) => {
                       />
                     </div>
 
-                    <div className="space-y-4 text-base sm:text-lg text-gray-300">
+                    <div className="space-y-4 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent text-base sm:text-lg  font-medium">
                       <p className="flex items-center justify-center lg:justify-center gap-2 flex-wrap">
-                        <span className="text-xl sm:text-2xl">🇵🇭</span>A Web
-                        Developer from the Philippines
+                        Web Developer
                       </p>
                       <p className="flex items-center justify-center lg:justify-center gap-2 text-green-400 font-medium flex-wrap">
                         <span className="relative flex h-3 w-3 flex-shrink-0">
@@ -195,7 +195,7 @@ const About = ({ index }) => {
               <div ref={focusRef} className="relative mb-7">
                 <div className="absolute inset-0 rounded-3xl blur-2xl"></div>
                 <div className="relative rounded-xl pt-6">
-                  <div className="flex items-center gap-3 mb-8">
+                  <div className="flex items-center gap-3 mb-8 card-border p-4 rounded-xl">
                     <div className="text-3xl sm:text-4xl">🎯</div>
                     <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
                       Currently Focused On

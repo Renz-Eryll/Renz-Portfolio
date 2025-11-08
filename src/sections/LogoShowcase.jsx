@@ -9,11 +9,11 @@ const LogoIcon = ({ icon }) => {
 };
 
 const LogoShowcase = () => (
-  <div className="relative">
+  <div className="relative section-padding">
     <div className="gradient-edge" />
     <div className="gradient-edge" />
 
-    <div className="marquee h-40 ">
+    <div className="marquee h-20 ">
       <div className="marquee-box md:gap-18 gap-10">
         {logoIconsList.map((icon, index) => (
           <LogoIcon key={index} icon={icon} />
