@@ -30,18 +30,16 @@ const Navbar = () => {
         {/* Logo Section */}
         <a
           href="#home"
-          className="relative z-50 flex items-center gap-2 font-bold tracking-tighter text-white transition-transform duration-300 hover:scale-105"
+          className="logo relative z-50 flex items-center gap-2 font-bold tracking-tighter text-white transition-transform duration-300 hover:scale-105"
         >
           {/* Replaced img with text/icon fallback for reliability, but you can swap back to <img> */}
 
           <span className={`${scrolled ? "hidden md:block" : "block"}`}>
-            <a href="#home" className="logo">
-              <img
-                src="/renz-logo.png"
-                alt="logo"
-                className="w-14 h-14 object-contain"
-              />
-            </a>
+            <img
+              src="/renz-logo.png"
+              alt="logo"
+              className="w-14 h-14 object-contain"
+            />
           </span>
         </a>
 

@@ -11,14 +11,18 @@ import Experience from "./sections/Experience";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <ShowcaseSection />
-      <Contact />
-      <Footer />
+      <div className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+        <div className=" ">
+          <Navbar />
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <ShowcaseSection />
+          <Contact />
+          <Footer />
+        </div>
+      </div>
     </>
   );
 };

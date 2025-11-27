@@ -34,17 +34,19 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative w-full py-20  bg-black overflow-hidden"
+      className="relative w-full py-16 md:py-20 lg:py-24 bg-black overflow-hidden"
     >
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-20 mt-20">
-        <TitleHeader title="Web Development Journey" sub="🚀 Experience" />
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 mt-20 md:mt-24">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <TitleHeader title="Web Development Journey" sub="🚀 Experience" />
+        </div>
 
-        <div className="relative flex flex-col gap-12 md:gap-24 mt-10">
-          {/* The Central Timeline Line (Hidden on mobile, visible on desktop) */}
+        <div className="relative flex flex-col gap-12 md:gap-16 lg:gap-24">
+          {/* The Central Timeline Line (Hidden on mobile, visible on md+) */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent hidden md:block transform md:-translate-x-1/2" />
 
           {experience.map((item, index) => {
@@ -53,7 +55,7 @@ const Experience = () => {
             return (
               <div
                 key={index}
-                className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${
+                className={`relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 ${
                   isEven ? "md:flex-row-reverse" : ""
                 }`}
               >
@@ -63,8 +65,8 @@ const Experience = () => {
                 </div>
 
                 {/* Side A: The Project/Image Card */}
-                <div className="w-full md:w-1/2 md:px-12 pl-16 md:pl-12">
-                  <GlowCard className="h-64 md:h-85 w-full group/image">
+                <div className="w-full md:w-1/2 pl-16 md:pl-0 md:px-6 lg:px-12">
+                  <GlowCard className="h-48 sm:h-56 md:h-64 lg:h-80 w-full group/image">
                     <div className="absolute inset-0 p-2">
                       <div className="w-full h-full rounded-xl overflow-hidden relative">
                         {/* Image Overlay Gradient */}
@@ -77,20 +79,12 @@ const Experience = () => {
                         />
 
                         {/* Action Buttons */}
-                        <div className="absolute bottom-4 left-4 right-4 z-20 flex gap-2">
-                          {/* <a
-                            href={item.caseStudyLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold hover:bg-white/20 transition-colors"
-                          >
-                            View Case Study
-                          </a> */}
+                        <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 z-20 flex gap-2">
                           <a
                             href={item.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold hover:bg-white/20 transition-colors"
+                            className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-bold hover:bg-white/20 transition-colors"
                           >
                             View Code
                           </a>
@@ -101,30 +95,30 @@ const Experience = () => {
                 </div>
 
                 {/* Center Timeline Node (Desktop Only) */}
-                <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center md:flex">
-                  <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.2)] z-20 overflow-hidden">
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.2)] z-20 overflow-hidden">
                     <img
                       src={item.logo}
                       alt={`${item.company} logo`}
-                      className="w-8 h-8 object-contain"
+                      className="w-6 h-6 lg:w-8 lg:h-8 object-contain"
                     />
                   </div>
                 </div>
 
                 {/* Side B: The Details Card */}
-                <div className="w-full md:w-1/2 md:px-12 pl-16 md:pl-12">
-                  <div className="flex flex-col gap-4">
+                <div className="w-full md:w-1/2 pl-16 md:pl-0 md:px-6 lg:px-12">
+                  <div className="flex flex-col gap-3 md:gap-4">
                     {/* Date Badge */}
-                    <div className="self-start px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-bold uppercase tracking-wide">
+                    <div className="self-start px-2.5 md:px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-[10px] md:text-xs font-bold uppercase tracking-wide">
                       {item.date}
                     </div>
 
                     {/* Title & Company */}
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">
+                      <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-1 leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-lg text-zinc-400 font-medium">
+                      <p className="text-base md:text-lg text-zinc-400 font-medium">
                         {item.company}
                       </p>
                     </div>
@@ -139,7 +133,7 @@ const Experience = () => {
                       {item.skills.map((skill, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 rounded-md bg-zinc-800/50 border border-zinc-700 text-zinc-300 text-xs font-medium hover:bg-zinc-800 hover:text-white transition-colors cursor-default"
+                          className="px-2 md:px-2.5 py-1 rounded-md bg-zinc-800/50 border border-zinc-700 text-zinc-300 text-[10px] md:text-xs font-medium hover:bg-zinc-800 hover:text-white transition-colors cursor-default"
                         >
                           {skill}
                         </span>
