@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TitleHeader from "../components/TitleHeader";
 import { FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiFolder } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,8 +18,7 @@ const ShowcaseSection = () => {
     {
       id: 1,
       title: "SubTrack",
-      description:
-        " Subscription management system for users and transactions.",
+      description: "Subscription management system for users and transactions.",
       image: "/images/SubTrack.svg",
       github: "https://github.com/Renz-Eryll/SubTrack.git",
       demo: "",
@@ -29,7 +28,7 @@ const ShowcaseSection = () => {
       id: 2,
       title: "Postagram",
       description:
-        " Social media web application with user authentication, post creation, and real-time updates.",
+        "Social media web application with user authentication, post creation, and real-time updates.",
       image: "/images/postagram-thumbnail.svg",
       github: "https://github.com/Renz-Eryll/Postagram.git",
       demo: "https://postagram-app.vercel.app",
@@ -75,7 +74,6 @@ const ShowcaseSection = () => {
       demo: "https://sync-it-project.vercel.app",
       tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
     },
-
     {
       id: 7,
       title: "FilmFindr",
@@ -97,152 +95,144 @@ const ShowcaseSection = () => {
   );
 
   useGSAP(() => {
-    // Section animation
+    // Section Fade In
     gsap.fromTo(
       sectionRef.current,
-      { opacity: 0, y: 50 },
+      { opacity: 0 },
       {
         opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power2.inOut",
+        duration: 1,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse",
         },
       }
     );
 
-    // Card animations
-    projectRefs.current.forEach((card, index) => {
-      if (card) {
-        // Card entrance animation
-        gsap.fromTo(
-          card,
-          { opacity: 0, xPercent: -30, rotateY: 10 },
-          {
-            opacity: 1,
-            xPercent: 0,
-            rotateY: 0,
-            duration: 0.8,
-            delay: 0.15 * (index % projectsPerPage),
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
+    // Card animations (Staggered)
+    const validRefs = projectRefs.current.filter((el) => el !== null);
 
-        // Animate elements within each card
-        const image = card.querySelector("img");
-        const title = card.querySelector("h2");
-        const description = card.querySelector("p");
-        const techStack = card.querySelector(".tech-stack");
-        const buttons = card.querySelector(".buttons");
-
-        gsap.from([image, title, description, techStack, buttons], {
-          opacity: 0,
-          y: 20,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out",
+    if (validRefs.length > 0) {
+      gsap.fromTo(
+        validRefs,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: card,
+            trigger: validRefs[0],
             start: "top 85%",
-            toggleActions: "play none none reverse",
           },
-        });
-      }
-    });
+        }
+      );
+    }
   }, [currentPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    window.scrollTo({
-      top: sectionRef.current.offsetTop - 100,
-      behavior: "smooth",
-    });
+    // Removed the automatic scroll behavior - page stays where user is
   };
 
   return (
-    <section id="projects" className="w-full section-padding xl:px-0">
+    <section
+      id="projects"
+      className="relative w-full min-h-screen bg-black overflow-hidden  py-24"
+    >
+      {/* --- Global Background Effects (Matches Contact Section) --- */}
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      {/* Top Left Spotlight */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
+
       <div
         ref={sectionRef}
-        className="w-full h-full section-padding md:px-20 px-5"
+        className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-20"
       >
-        <div className="mb-18">
-          <TitleHeader
-            title="Personal Works and Web Apps"
-            sub="🚀 My Projects"
-          />
+        {/* Header */}
+        <div className="mb-16 md:mb-20">
+          <TitleHeader title="Personal Works and Builds" sub="My Projects" />
         </div>
 
         {/* Grid Layout for Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentProjects.map((project, index) => (
             <div
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
-              className="relative card-border rounded-xl overflow-hidden"
+              className="group relative bg-zinc-900/30 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="absolute inset-0 card-border rounded-xl blur-3xl "></div>
-              <div className="relative pointer-events-none">
+              {/* Image Container */}
+              <div className="relative w-full aspect-video overflow-hidden border-b border-white/5">
+                <div className="absolute inset-0 bg-zinc-800 animate-pulse" />
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="relative w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/65 to-transparent"></div>
+                {/* Dark Overlay on Image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-80"></div>
+                {/* Floating Icon Top Right */}
+                <div className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-md border border-white/10 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
+                  <FiFolder className="w-5 h-5" />
+                </div>
               </div>
-              <div className="p-6 pointer-events-auto mb-3">
-                <h2 className="text-xl font-bold text-white mb-2">
-                  {project.title}
-                </h2>
-                <p className="text-gray-300 text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="tech-stack flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, idx) => (
+
+              {/* Content */}
+              <div className="p-6 md:p-8 flex flex-col h-[280px]">
+                <div className="flex-grow">
+                  <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                    {project.title}
+                  </h2>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+                </div>
+                {/* Tech Stack */}
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.tech.slice(0, 4).map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-purple-10/10 text-purple-10 rounded-full text-xs"
+                      className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] font-mono uppercase tracking-wider text-zinc-300 group-hover:border-purple-500/30 transition-colors"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.tech.length > 4 && (
+                    <span className="px-2.5 py-1 text-[10px] text-zinc-500 font-mono">
+                      +{project.tech.length - 4}
+                    </span>
+                  )}
                 </div>
-                <div className="buttons flex gap-3">
+                {/* Action Buttons */}
+                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-purple-800 text-white rounded-lg text-sm font-semibold hover:bg-purple-100 transition-colors z-10"
-                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors"
                   >
                     <FaGithub size={16} />
-                    Code
+                    <span>Code</span>
                   </a>
+
                   {project.demo ? (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-300 rounded-lg text-sm font-semibold hover:border-purple-500 hover:text-white transition-colors z-10"
-                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors ml-auto group/link"
                     >
-                      <FiExternalLink size={16} />
-                      Demo
+                      <span>Live Demo</span>
+                      <FiExternalLink
+                        size={16}
+                        className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
+                      />
                     </a>
                   ) : (
-                    <span
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-600 text-gray-400 rounded-lg text-sm font-semibold opacity-60 cursor-not-allowed z-10"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FiExternalLink size={16} />
-                      Coming Soon
+                    <span className="ml-auto text-xs font-mono text-zinc-600 uppercase cursor-not-allowed">
+                      Coming Soon!
                     </span>
                   )}
                 </div>
@@ -251,9 +241,9 @@ const ShowcaseSection = () => {
           ))}
         </div>
 
-        {/* Pagination */}
+        {/* Modern Pagination */}
         {totalPages > 1 && (
-          <div className="mt-5 flex justify-center gap-2">
+          <div className="mt-5 flex justify-center gap-2 mb-20">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}

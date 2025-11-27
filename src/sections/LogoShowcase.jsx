@@ -9,7 +9,7 @@ const LogoIcon = ({ icon }) => {
 };
 
 const LogoShowcase = () => (
-  <div className="relative section-padding">
+  <div className="relative mt-40 mb-30">
     <div className="gradient-edge" />
     <div className="gradient-edge" />
 

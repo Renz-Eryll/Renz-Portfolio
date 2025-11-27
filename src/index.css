@@ -21,6 +21,12 @@ section {
 
 @theme {
   --font-sans: "Mona Sans", sans-serif;
+  --color-purple-50: #9A4DFF;
+  --color-purple-glow: rgba(154, 77, 255, 0.4);
+}
+
+@theme {
+  --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
   --color-purple-10: #B576FF;
   --color-purple-50: #9A4DFF;
@@ -30,6 +36,80 @@ section {
   --color-black-200: #282732;
   --color-blue-50: #839cb5;
   --color-blue-100: #2d2d38;
+}
+
+
+/* Modern Grid Background Pattern */
+.bg-grid-white {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* The Text Slider Logic */
+.slide-container {
+  display: inline-flex;
+  height: 1.2em;
+  /* Height of one line */
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.slide-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Smooth cubic-bezier for snappy modern movement */
+  animation: wordSlider 18s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes wordSlider {
+
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+
+  12.5%,
+  22.5% {
+    transform: translateY(-12.5%);
+  }
+
+  25%,
+  35% {
+    transform: translateY(-25%);
+  }
+
+  37.5%,
+  47.5% {
+    transform: translateY(-37.5%);
+  }
+
+  50%,
+  60% {
+    transform: translateY(-50%);
+  }
+
+  62.5%,
+  72.5% {
+    transform: translateY(-62.5%);
+  }
+
+  75%,
+  85% {
+    transform: translateY(-75%);
+  }
+
+  87.5%,
+  97.5% {
+    transform: translateY(-87.5%);
+  }
+
+  100% {
+    transform: translateY(-87.5%);
+  }
+
+  /* Loop fix */
 }
 
 @layer utilities {
@@ -596,27 +676,27 @@ section {
 
   /* About section */
   #about {
-    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+    @apply mt-14 md:mt-22 lg:mt-20 mb-10 md:mb-12;
   }
 
   /* Experience section */
   #experience {
-    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+    @apply mt-14 md:mt-22 lg:mt-20 mb-10 md:mb-12;
   }
 
   /* Skills section */
   #skills {
-    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+    @apply mt-14 md:mt-22 lg:mt-20 mb-10 md:mb-12;
   }
 
   /* Projects section */
   #projects {
-    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+    @apply mt-14 md:mt-22 lg:mt-20 mb-10 md:mb-12;
   }
 
   /* Contact section */
   #contact {
-    @apply mt-24 md:mt-32 lg:mt-40 mb-24 md:mb-32;
+    @apply mt-14 md:mt-22 lg:mt-20 mb-10 md:mb-12;
   }
 
   /* Footer */
@@ -666,13 +746,7 @@ section {
       @apply mb-20;
     }
 
-    #about,
-    #experience,
-    #skills,
-    #projects,
-    #contact {
-      @apply mt-20 mb-20;
-    }
+
   }
 
   /* Tablet responsive adjustments */
