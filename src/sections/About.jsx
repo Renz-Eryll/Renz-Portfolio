@@ -71,10 +71,13 @@ const About = () => {
       ref={containerRef}
       className="relative w-full py-20 overflow-hidden bg-black"
     >
-      {/* --- Background Effects --- */}
-      <div className="absolute inset-0 pointer-events-none bg-grid-white [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"></div>
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
-
+      <div className="about-ambient">
+        <div className="section-dark-overlay" />
+        <div className="section-grid-pattern" />
+        <div className="section-glow-purple" />
+        <div className="section-glow-cyan" />
+        <div className="section-vignette" />
+      </div>
       <div className="relative z-10 px-5 md:px-10 lg:px-20">
         {/* Header */}
         <div className="mb-16 bento-item">

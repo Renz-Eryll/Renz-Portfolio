@@ -36,10 +36,13 @@ const Experience = () => {
       id="experience"
       className="relative w-full py-16 md:py-20 lg:py-24 bg-black overflow-hidden"
     >
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none" />
-
+      <div className="experience-ambient">
+        <div className="section-dark-overlay" />
+        <div className="section-grid-pattern" />
+        <div className="section-glow-blue" />
+        <div className="section-glow-purple" />
+        <div className="section-vignette" />
+      </div>
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 mt-20 md:mt-24">
         <div className="mb-12 md:mb-16 lg:mb-20">
           <TitleHeader title="Web Development Journey" sub="🚀 Experience" />

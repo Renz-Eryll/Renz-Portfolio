@@ -33,14 +33,13 @@ const Hero = () => {
       className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col justify-between font-sans text-white"
       role="banner"
     >
-      {/* --- Background Effects --- */}
-      {/* Deep Grid Pattern */}
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
-      {/* Top ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-purple-500/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen opacity-50" />
-
-      {/* --- Main Content --- */}
+      <div className="hero-ambient">
+        <div className="section-dark-overlay" />
+        <div className="section-grid-pattern" />
+        <div className="section-glow-purple" />
+        <div className="section-glow-blue" />
+        <div className="section-vignette" />
+      </div>
       <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-5 pt-32 md:px-20">
         {/* Availability Badge */}
         <div

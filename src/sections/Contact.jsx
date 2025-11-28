@@ -54,14 +54,14 @@ const Contact = () => {
       id="contact"
       className="w-full min-h-screen bg-black overflow-hidden py-24"
     >
-      {/* --- Global Background Effects --- */}
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
-      {/* Ambient Glows */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
-
+      <div className="contact-ambient">
+        <div className="section-dark-overlay" />
+        <div className="section-grid-pattern" />
+        <div className="section-glow-purple" />
+        <div className="section-glow-blue" />
+        <div className="section-glow-cyan" />
+        <div className="section-vignette" />
+      </div>
       <div
         ref={sectionRef}
         className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-20"
