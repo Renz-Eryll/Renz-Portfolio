@@ -28,11 +28,11 @@ const ShowcaseSection = () => {
       id: 2,
       title: "Postagram",
       description:
-        "Social media web application with user authentication, post creation, and real-time updates.",
+        "Social media web application with user authentication, post creation.",
       image: "/images/postagram-thumbnail.svg",
       github: "https://github.com/Renz-Eryll/Postagram.git",
       demo: "https://postagram-app.vercel.app",
-      tech: ["Next.js", "Neon PostgreSQL", "Prisma", "Clerk", "Shadcn UI"],
+      tech: ["Next.js", "Neon", "Prisma", "Clerk", "Shadcn UI"],
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ const ShowcaseSection = () => {
       image: "/images/syncit.svg",
       github: "https://github.com/Renz-Eryll/SyncIt.git",
       demo: "https://sync-it-project.vercel.app",
-      tech: ["Next.js", "Appwrite", "Tailwind CSS", "Shadcn UI"],
+      tech: ["Next.js", "Appwrite", "Shadcn UI"],
     },
     {
       id: 7,
@@ -82,7 +82,7 @@ const ShowcaseSection = () => {
       image: "/images/filmfindr.svg",
       github: "https://github.com/Renz-Eryll/MovieBrowsingApp.git",
       demo: null,
-      tech: ["React.js", "TMDB API", "Tailwind CSS", "Appwrite"],
+      tech: ["React.js", "TMDB API", "Appwrite"],
     },
   ];
 
@@ -150,7 +150,7 @@ const ShowcaseSection = () => {
         className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-20"
       >
         {/* Header */}
-        <div className="mb-16 md:mb-16">
+        <div className="mb-16 md:mb-10">
           <TitleHeader title="Personal Works and Builds" sub="My Projects" />
         </div>
 
@@ -179,7 +179,7 @@ const ShowcaseSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8 flex flex-col h-[240px]">
+              <div className="p-6 md:p-8 flex flex-col h-[230px]">
                 <div className="flex-grow">
                   <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                     {project.title}

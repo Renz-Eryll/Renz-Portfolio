@@ -40,14 +40,14 @@ const Hero = () => {
         <div className="section-glow-blue" />
         <div className="section-vignette" />
       </div>
-      <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-5 pt-32 md:px-20">
+      <div className="relative z-10 flex flex-col items-center justify-center flex-grow w-full px-5 pt-28 md:px-20">
         {/* Availability Badge */}
         <div
           className={`transition-all duration-1000 ease-out transform ${
             isLoaded ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-zinc-800 rounded-full bg-zinc-900/50 backdrop-blur-md hover:border-zinc-700 hover:bg-zinc-800/50 transition-all cursor-default group">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-5 border border-zinc-800 rounded-full bg-zinc-900/50 backdrop-blur-md hover:border-zinc-700 hover:bg-zinc-800/50 transition-all cursor-default group">
             <span className="relative flex w-2 h-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
