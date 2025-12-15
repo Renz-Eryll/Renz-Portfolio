@@ -24,6 +24,7 @@ const AnimatedCounter = () => {
                 enableScrollSpy={true}
                 scrollSpyOnce={true}
               />
+              <div id="about" />
             </div>
 
             {/* The Label */}
@@ -33,7 +34,6 @@ const AnimatedCounter = () => {
           </div>
         ))}
       </div>
-      <div id="about"></div>
     </div>
   );
 };

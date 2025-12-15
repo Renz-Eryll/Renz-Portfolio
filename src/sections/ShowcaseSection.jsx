@@ -137,10 +137,7 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="relative w-full min-h-screen bg-black overflow-hidden  py-24"
-    >
+    <section className="relative w-full min-h-screen bg-black overflow-hidden  py-24">
       <div className="projects-ambient">
         <div className="section-dark-overlay" />
         <div className="section-grid-pattern" />
@@ -153,7 +150,7 @@ const ShowcaseSection = () => {
         className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-20"
       >
         {/* Header */}
-        <div className="mb-16 md:mb-20">
+        <div className="mb-16 md:mb-16">
           <TitleHeader title="Personal Works and Builds" sub="My Projects" />
         </div>
 
@@ -182,7 +179,7 @@ const ShowcaseSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8 flex flex-col h-[280px]">
+              <div className="p-6 md:p-8 flex flex-col h-[240px]">
                 <div className="flex-grow">
                   <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
                     {project.title}
@@ -245,7 +242,7 @@ const ShowcaseSection = () => {
 
         {/* Modern Pagination */}
         {totalPages > 1 && (
-          <div className="mt-5 flex justify-center gap-2 mb-20">
+          <div className="mt-9 flex justify-center gap-2 ">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}

@@ -43,7 +43,7 @@ const Experience = () => {
         <div className="section-glow-purple" />
         <div className="section-vignette" />
       </div>
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 mt-20 md:mt-24">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 mt-20 md:mt-30">
         <div className="mb-12 md:mb-16 lg:mb-20">
           <TitleHeader title="Web Development Journey" sub="🚀 Experience" />
         </div>

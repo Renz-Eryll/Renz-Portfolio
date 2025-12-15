@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-full min-h-screen bg-black overflow-hidden py-24"
+      className="w-full min-h-screen  bg-black overflow-hidden py-24"
     >
       <div className="contact-ambient">
         <div className="section-dark-overlay" />
@@ -64,7 +64,7 @@ const Contact = () => {
       </div>
       <div
         ref={sectionRef}
-        className="relative z-10 w-full max-w-[1400px] mx-auto px-5 md:px-20"
+        className="relative z-10 w-full max-w-[1400px] mt-30 mx-auto px-5 md:px-20"
       >
         {/* Header */}
         <div className="mb-20">
