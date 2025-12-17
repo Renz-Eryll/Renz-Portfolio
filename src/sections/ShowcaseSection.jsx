@@ -72,7 +72,7 @@ const ShowcaseSection = () => {
       image: "/images/syncit.svg",
       github: "https://github.com/Renz-Eryll/SyncIt.git",
       demo: "https://sync-it-project.vercel.app",
-      tech: ["Next.js", "Appwrite", "Shadcn UI"],
+      tech: ["Next.js", "Appwrite", "Shadcn UI", "Tailwind CSS"],
     },
     {
       id: 7,
@@ -82,7 +82,7 @@ const ShowcaseSection = () => {
       image: "/images/filmfindr.svg",
       github: "https://github.com/Renz-Eryll/MovieBrowsingApp.git",
       demo: null,
-      tech: ["React.js", "TMDB API", "Appwrite"],
+      tech: ["React.js", "TMDB API", "Appwrite", "Tailwind CSS"],
     },
   ];
 

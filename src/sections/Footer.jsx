@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-black py-8 border-t border-white/10">
+    <footer className="mt-10 relative w-full bg-black py-8 border-t border-white/10">
       {/* --- Top Glowing Line Effect (Subtle) --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200px] h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
 
