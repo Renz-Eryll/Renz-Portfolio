@@ -4,6 +4,19 @@ import GlowCard from "../components/GlowCard";
 
 const experience = [
   {
+    title: "Web Developer",
+    company: "YAT Transcription and Business Outsourcing Services",
+    date: "Nov 2025 - Jan 2026",
+    logo: "/images/book-solid.svg",
+    description:
+      "Tested and debugged phishing simulation email templates for security awareness training programs. Identified and resolved rendering issues across multiple Outlook versions and email clients. Collaborated with team using Jira for task tracking and Slack for communication.",
+    skills: ["HTML", "CSS", "Email Development", "Jira", "Slack"],
+    image: "/images/yat-thumbnail.svg",
+    caseStudyLink: "#",
+    githubLink: null, // No github link for this experience
+  },
+
+  {
     title: "Frontend Developer, UI/UX Designer & Quality Assurance",
     company: "On-the-job training / Internship",
     date: "2023 - 2024",
@@ -81,17 +94,19 @@ const Experience = () => {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover/image:scale-110"
                         />
 
-                        {/* Action Buttons */}
-                        <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 z-20 flex gap-2">
-                          <a
-                            href={item.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-bold hover:bg-white/20 transition-colors"
-                          >
-                            View Code
-                          </a>
-                        </div>
+                        {/* Action Buttons - Only show if githubLink exists */}
+                        {item.githubLink && (
+                          <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 z-20 flex gap-2">
+                            <a
+                              href={item.githubLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-2.5 md:px-3 py-1 md:py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs font-bold hover:bg-white/20 transition-colors"
+                            >
+                              View Code
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </GlowCard>

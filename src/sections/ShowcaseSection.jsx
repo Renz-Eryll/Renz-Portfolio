@@ -84,6 +84,16 @@ const ShowcaseSection = () => {
       demo: null,
       tech: ["React.js", "TMDB API", "Appwrite", "Tailwind CSS"],
     },
+    {
+      id: 8,
+      title: "ShoeVerse",
+      description:
+        "An e-commerce platform for browsing and purchasing footwear.",
+      image: "/images/shoeverse-thumbnail.svg",
+      github: "https://github.com/Renz-Eryll/ShoeVerse.git",
+      demo: "https://shoe-verse-theta.vercel.app",
+      tech: ["React.js", "Vite", "Tailwind CSS"],
+    },
   ];
 
   // Pagination logic
@@ -91,7 +101,7 @@ const ShowcaseSection = () => {
   const startIndex = (currentPage - 1) * projectsPerPage;
   const currentProjects = projects.slice(
     startIndex,
-    startIndex + projectsPerPage
+    startIndex + projectsPerPage,
   );
 
   useGSAP(() => {
@@ -106,7 +116,7 @@ const ShowcaseSection = () => {
           trigger: sectionRef.current,
           start: "top 80%",
         },
-      }
+      },
     );
 
     // Card animations (Staggered)
@@ -126,7 +136,7 @@ const ShowcaseSection = () => {
             trigger: validRefs[0],
             start: "top 85%",
           },
-        }
+        },
       );
     }
   }, [currentPage]);
