@@ -10,7 +10,7 @@ const experience = [
     logo: "/images/book-solid.svg",
     description:
       "Tested and debugged phishing simulation email templates for security awareness training programs. Identified and resolved rendering issues across multiple Outlook versions and email clients. Collaborated with team using Jira for task tracking and Slack for communication.",
-    skills: ["HTML", "CSS", "Email Development", "Jira", "Slack"],
+    skills: ["HTML", "CSS", "Bootstrap", "Email Development", "Jira", "Slack"],
     image: "/images/yat-thumbnail.svg",
     caseStudyLink: "#",
     githubLink: null, // No github link for this experience

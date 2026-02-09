@@ -138,9 +138,8 @@ const Hero = () => {
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          Hello, I’m <span className="text-white font-semibold">Renz</span>. I
-          engineer pixel-perfect, accessible, and high-performance web
-          experiences.
+          Hi, I'm <span className="text-white font-semibold">Renz</span>. I
+          build clean, fast websites that work great for everyone.
         </p>
 
         {/* Action Buttons */}

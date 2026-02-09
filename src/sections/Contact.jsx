@@ -23,7 +23,7 @@ const Contact = () => {
           trigger: sectionRef.current,
           start: "top 80%",
         },
-      }
+      },
     );
 
     // 2. Staggered Animation
@@ -43,7 +43,7 @@ const Contact = () => {
               trigger: item,
               start: "top bottom-=100",
             },
-          }
+          },
         );
       }
     });
@@ -223,15 +223,6 @@ const Contact = () => {
                     {/* Glowing Line (Sine Wave Effect) */}
                     <div className="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent top-1/2"></div>
                     <div className="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-purple-500/20 blur-xl rounded-full animate-pulse"></div>
-
-                    <div className="relative z-10 text-center">
-                      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tighter">
-                        100%
-                      </p>
-                      <p className="text-[9px] sm:text-[10px] md:text-xs text-zinc-500 font-mono uppercase">
-                        Response Rate
-                      </p>
-                    </div>
                   </div>
 
                   {/* Bottom Section: Tech Stack "Tags" */}
