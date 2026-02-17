@@ -7,19 +7,32 @@ const experience = [
     title: "Web Developer",
     company: "YAT Transcription and Business Outsourcing Services",
     date: "Nov 2025 - Jan 2026",
-    logo: "/images/book-solid.svg",
+    logo: "/images/logos/HTML5.svg",
     description:
       "Tested and debugged phishing simulation email templates for security awareness training programs. Identified and resolved rendering issues across multiple Outlook versions and email clients. Collaborated with team using Jira for task tracking and Slack for communication.",
     skills: ["HTML", "CSS", "Bootstrap", "Email Development", "Jira", "Slack"],
-    image: "/images/yat-thumbnail.svg",
+    image: "/images/yat.jpg",
     caseStudyLink: "#",
     githubLink: null, // No github link for this experience
   },
 
   {
-    title: "Frontend Developer, UI/UX Designer & Quality Assurance",
+    title: "Front-End Developer",
+    company: "Freelance Projects",
+    date: "Jul 2025 - Nov 2025",
+    logo: "/images/logos/Laravel.svg",
+    description:
+      "Designed and developed responsive web applications for clients using React.js, TailwindCSS, and Laravel PHP. Implemented user-friendly interfaces and integrated back-end APIs. Collaborated with clients to gather requirements and deliver customized solutions that met their needs.",
+    skills: ["React.js", "Laravel PHP", "TailwindCSS", "MySQL"],
+    image: "/images/free.jpg",
+    caseStudyLink: "#",
+    githubLink: null,
+  },
+
+  {
+    title: "Front-End Developer, UI/UX Designer & Quality Assurance",
     company: "On-the-job training / Internship",
-    date: "2023 - 2024",
+    date: "Feb 2025 - Jun 2025",
     logo: "/images/logos/React.svg",
     description:
       "Performed QA testing to ensure functionality, fix issues, and maintain compatibility. Designed and developed user-friendly, responsive interfaces for the customer, agent, and admin portals.  Collaborated with the back-end team to integrate ticket management and status updates using React.js and Laravel",
@@ -30,10 +43,10 @@ const experience = [
   },
 
   {
-    title: "Frontend Developer, Arduino Programmer",
+    title: "Front-End Developer, Arduino Programmer",
     company: "Capstone Project",
-    date: "2023 - 2024",
-    logo: "/images/logos/HTML5.svg",
+    date: "2024 - 2025",
+    logo: "/images/logos/php.jpeg",
     description:
       "Developed the front-end interfaces for real-time hive monitoring, harvest tracking, and notifications using HTML, CSS and Bootstrap Programmed and integrated Arduino-based sensors and IoT modules for automated temperature, humidity, and hive weight monitoring, with data transmission to the web system.",
     skills: ["HTML", "CSS", "JavaScript", "PHP", "Arduino", "MySQL"],

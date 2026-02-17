@@ -36,9 +36,9 @@ const About = () => {
       text: "Next.js Best Practices",
     },
     {
-      color: "bg-yellow-400",
-      label: "Freelance",
-      text: "Building Client Projects",
+      color: "bg-red-400",
+      label: "Cloud",
+      text: "AWS & Vercel Deployment",
     },
   ];
 
@@ -60,10 +60,10 @@ const About = () => {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -115,7 +115,7 @@ const About = () => {
             </div>
           </div>
           {/* --- 1. IDE STYLE BIO CARD (New Design) --- */}
-          <div className="bento-item md:col-span-2 lg:col-span-2 row-span-2 group relative border rounded-2xl bg-zinc-900 border-zinc-800 hover:bg-zinc-800/50 transition-colors  duration-300 flex flex-col overflow-hidden shadow-2xl">
+          <div className="bento-item md:col-span-2 lg:col-span-2 row-span-2 group relative border rounded-2xl bg-zinc-900 border-zinc-900 hover:bg-zinc-900/80 transition-colors  duration-300 flex flex-col overflow-hidden shadow-2xl">
             {/* Mac-style Window Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-zinc-900/50 border-b border-zinc-800">
               <div className="flex gap-2">
@@ -330,8 +330,8 @@ const About = () => {
               Full Stack Ready
             </h4>
             <p className="text-sm text-zinc-400">
-              Crafting scalable, SEO-friendly web solutions with modern
-              architectures.
+              Uses a variety of tools and technologies to build complete web
+              applications, from databases to deployment.
             </p>
           </div>
         </div>

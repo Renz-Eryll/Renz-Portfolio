@@ -150,7 +150,7 @@ const Hero = () => {
         >
           <Button
             text="Download CV"
-            href="/files/RenzEryllRameloCVUpdated.pdf"
+            href="/files/Renz Eryll C. Ramelo-Resume.pdf"
             download
           />
           <a
